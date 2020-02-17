@@ -1,0 +1,19 @@
+
+.channel-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+
+.channel-form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+}
+
+.input-label {
+    width:100%;
+}

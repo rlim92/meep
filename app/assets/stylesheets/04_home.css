@@ -1,0 +1,72 @@
+.home-outer {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.home-container.sidebar {
+    width: 220px;
+    /* height: 100%; */
+    background-color: #3F0E40;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.workplace {
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+    line-height: 1.33334;
+    font-weight: bolder;
+    color: white;
+    /* display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
+}
+
+.sidebar-username {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    color: #CFC3CF;
+}
+
+.title-and-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.channels-header {
+    font-family: Lato, sans-serif;
+    color: #CFC3CF;
+    font-size: 15px;
+    padding-left: 12px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    /* width: 50%; */
+}
+
+.create-link {
+    margin-top: 13px;
+}
+
+.channels-ul {
+    font-family: Lato, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #CFC3CF;
+    list-style: none;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 12px;
+    padding-bottom: 5px;
+}
+
+.channel-li {
+    padding: 5px;
+    font-weight: 50;
+}
+
+.hashtag {
+    padding-right: 5px;
+}
