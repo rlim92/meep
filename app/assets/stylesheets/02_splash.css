@@ -361,7 +361,7 @@ body {
 }
 
 .splash.contact {
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
     background-image: url("slack-head.png");
     background-size: cover;
     background-repeat: no-repeat;
