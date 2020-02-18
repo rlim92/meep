@@ -23,6 +23,7 @@ class Splash extends React.Component {
             <div className='splash-container'>
                 <section className='splash section-1'>
                     <div className='subsection-1'>
+                        {/* <img src="{window.slackBackground}"/> */}
                         <h1 className="section-1 head">Meep replaces email inside your company</h1>
                         <p>
                             Keep conversations organized in Meep, 
@@ -44,7 +45,7 @@ class Splash extends React.Component {
                     </p>
                     <br/>
                     <iframe width="870" height="489.38" 
-                        src="https://www.youtube.com/embed/EYqxQGmQkVw" 
+                        src="https://www.youtube.com/embed/AmUCLnN56f0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; 
                         picture-in-picture">
                     </iframe>
@@ -107,12 +108,12 @@ class Splash extends React.Component {
                     <ul className="contact-ul">
                         <li>
                             <a target="_blank" href="https://github.com/rlim92">
-                                <img src="https://image.flaticon.com/icons/svg/2111/2111432.svg" width="100"/>
+                                <img src={window.github} width="100"/>
                             </a>
                         </li>
                         <li>
                             <a target="_blank" href="https://www.linkedin.com/in/richard-lim-7100a4a7/">
-                                <img src="https://image.flaticon.com/icons/svg/1384/1384046.svg" width="100"/>
+                                <img src="https://www.iconsdb.com/icons/preview/white/linkedin-3-xxl.png" width="100"/>
                             </a>
                         </li>
                     </ul>
@@ -125,7 +126,7 @@ class Splash extends React.Component {
                     </div>
                 </section>
                 <footer className="footer">
-                    Meep is a slack clone created by Rich Lim
+                    Meep is a dark-mode slack clone created by Rich Lim
                 </footer>
             </div>
         );

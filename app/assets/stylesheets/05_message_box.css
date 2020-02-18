@@ -9,6 +9,7 @@
 .message {
     list-style: none;
     color: #1D1C1D;
+    color: whitesmoke;
     font-family: 'Lato', sans-serif;
     /* font-size: 15px; */
     line-height: 1.46668;
@@ -19,6 +20,7 @@
     font-size: 15px;
     /* font-weight: 900; */
     margin-bottom: 0px;
+    /* color: rgb(188, 221, 222); */
 }
 
 
@@ -31,6 +33,7 @@
     margin-top: 3px;
     /* font-weight: 200; */
     margin-bottom: 5px;
+    color: rgb(188, 221, 222);
 }
 
 .chatlog.channel {
@@ -62,6 +65,7 @@
 
 .input.message {
     width: 91%;
+    color: rgba(var(--sk_foreground_high_solid,134,134,134),1);
     margin-left: 25px;
     padding-left: 38px;
     padding-top: 12px;

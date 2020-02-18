@@ -65,9 +65,15 @@ class ChannelShow extends React.Component {
     }
 
     render() {
-        let chatlog = "";
+        let chatlog;
+        let name;
+        let memberCount = 0;
 
         if (this.props.channel && this.props.channel.id == this.props.match.params.channelId) {
+
+            name = this.props.channel.name;
+            memberCount = this.props.channel.member_ids.length
+
             chatlog = Object.values(this.props.messages).map( msg => {
                 return <MessageItem 
                     key={[msg.id, msg.id]}
@@ -81,15 +87,15 @@ class ChannelShow extends React.Component {
             <div>
                 <div className="chatlog channel">
                     <div className="channel-top-info">
-                        <h3 className="channel-name">#{this.props.channel.name}</h3>
+                        <h3 className="channel-name">#{name}</h3>
                         <div className="member-list">
-                            <img className="member-icon" src="https://image.flaticon.com/icons/svg/1077/1077063.svg" width="12"/>
-                            <p className="member-count">{this.props.channel.member_ids.length}</p>
+                            <img className="member-icon" src="https://pngimage.net/wp-content/uploads/2018/06/white-person-icon-png-2.png" width="15"/>
+                            <p className="member-count">{memberCount}</p>
                         </div>
                     </div>
                     <ul className="chatlog-ul">
                         {chatlog}
-                    <div ref={this.bottom}></div>
+                        <div ref={this.bottom}></div>
                     </ul>
                 </div>
                 <div className="message-form-outer-container">

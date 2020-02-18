@@ -31,6 +31,7 @@ const Nav = (props) => {
                     {/* <img src="https://www.freepnglogos.com/uploads/company-logo-png/company-logo-transparent-png-19.png" width="50"/> */}
                     <li>
                         <Link className="logo" to="/">
+                            <img src="https://image.flaticon.com/icons/svg/2111/2111615.svg" width="12" />
                             <span className="red">m</span>
                             <span className="blue">e</span>
                             <span className="yellow">e</span>

@@ -10,12 +10,15 @@ class SideBar extends React.Component {
     render() {
         return (
             <div className="home-container sidebar">
-                <h1 className="workplace"><Link className="logo" to="/home">
-                    <span className="red">m</span>
-                    <span className="blue">e</span>
-                    <span className="yellow">e</span>
-                    <span className="green">p</span>
-                </Link></h1>
+                <h1 className="workplace">
+                    <Link className="logo" to="/home">
+                        <img src="https://image.flaticon.com/icons/svg/2111/2111615.svg" width="14"/>
+                        <span className="red"><strong>m</strong></span>
+                        <span className="blue"><strong>e</strong></span>
+                        <span className="yellow"><strong>e</strong></span>
+                        <span className="green"><strong>p</strong></span>
+                    </Link>
+                </h1>
                 <h3 className="sidebar-username">{this.props.user.username}</h3>
                 <button className="logout" onClick={this.props.logout}>Log out</button>
                 <ChannelIndex />

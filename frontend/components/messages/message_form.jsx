@@ -30,6 +30,10 @@ class MessageForm extends React.Component {
     };
 
     render() {
+        let name;
+        if (this.props.channel) {
+            name = this.props.channel.name;
+        }
         return (
             <div className="message-form-container">
                 <form className="message-form" onSubmit={this.handleSubmit}>
@@ -39,7 +43,7 @@ class MessageForm extends React.Component {
                         value={this.state.text}
                         onChange={this.update("text")}
                         onKeyUp={this.onKeyUp}
-                        placeholder={`Message #${this.props.channel.name}`}
+                        placeholder={`Message #${name}`}
                     />
                     {/* <button>Send</button> */}
                 </form>

@@ -26,7 +26,10 @@ class ChannelIndex extends React.Component {
             <div className="channels-index">
                 <div className="title-and-create">
                     <h3 className="channels-header">Channels</h3>
-                    <Link className="create-link" to="/home/channels/create">create</Link>
+                    <Link className="create-link" to="/home/channels/create">
+                        {/* https://image.flaticon.com/icons/png/512/1890/1890636.png */}
+                        <img src="https://image.flaticon.com/icons/svg/983/983901.svg" width="20"/>
+                    </Link>
                 </div>
                 <ul className="channels-ul">
                     {channelItemLis}
