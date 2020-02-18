@@ -40,6 +40,15 @@ export const fetchChannel = (id) => {
     };
 };
 
+export const fetchMeeptown = () => {
+    // debugger
+    return (dispatch) => {
+        return APIUtil.fetchMeeptown().then(channel => {
+            return channel.id
+        });
+    };
+};
+
 export const fetchUserChannels = (userId) => {
     return (dispatch) => {
         return APIUtil.fetchUserChannels(userId).then(channels => {

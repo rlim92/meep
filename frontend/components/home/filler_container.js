@@ -1,29 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Filler from './filler';
+import { fetchMeeptown } from '../../actions/channel_actions';
 
-// import ChannelShow from '../channels/channel_show'
-// import { fetchChannel } from '../../actions/channel_actions';
-// import { receiveMessage, fetchChannelMessages } from '../../actions/message_actions';
-// import { fetchChannelMembers } from '../../actions/user_actions';
+const mSTP = (state, ownProps) => {
+    return {
+        currentUser: state.entities.users[state.session.id],
+        channels: state.entities.channels
+    }
+};
 
-// const mSTP = (state, ownProps) => {
-//     const globalChannel = state.entities.channels[state.entities.users[state.session.id].channel_ids[0]]
-//     return {
-//         channel: globalChannel,
-//         messages: state.entities.messages,
-//         currentUserId: state.session.id
-//     };
-// };
-
-// const mDTP = (dispatch) => {
-//     return {
-//         fetchChannel: (id) => dispatch(fetchChannel(id)),
-//         receiveMessage: (id) => dispatch(receiveMessage(id)),
-//         fetchChannelMessages: (channelId) => dispatch(fetchChannelMessages(channelId)),
-//         fetchChannelMembers: (channelId) => dispatch(fetchChannelMembers(channelId))
-//     };
-// };
+const mDTP = (dispatch) => {
+    return {
+        fetchMeeptown: () => dispatch(fetchMeeptown())
+    };
+};
 
 
-export default connect(null, null)(Filler);
+export default connect(mSTP, mDTP)(Filler);

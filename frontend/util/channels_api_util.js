@@ -5,6 +5,18 @@ export const fetchChannel = (id) => {
     });
 };
 
+export const fetchMeeptown = () => {
+    // debugger
+    return $.ajax({
+        method: "GET",
+        url: `api/channels/`,
+        data: { 
+            name: 'Meeptown',
+            author: 'rich'
+        }
+    });
+};
+
 export const fetchChannels = () => {
     return $.ajax({
         method: "GET",

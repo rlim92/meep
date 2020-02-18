@@ -1,11 +1,26 @@
 import React from 'react';
 
-const Filler = (props) => {
-    return (
-        <div className="filler">
-            <h1>Check out your channels in the sidebar!</h1>
-        </div>
-    )
+class Filler extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        const firstChannel = this.props.currentUser.channel_ids[0];
+
+        debugger
+        if (firstChannel) {
+            this.props.history.push(`/home/channels/${firstChannel}`)
+        }
+
+    }
+
+    render() {
+        return (
+            <div className="filler">
+            </div>
+        )
+    }
 }
 
 export default Filler;

@@ -10,6 +10,18 @@ class Api::ChannelsController < ApplicationController
             else
                 render json: @channels.errors.full_messages, status: 420
             end
+        elsif params[:name] && params[:author]
+            name = params[:name]
+            author = params[:author]
+            # debugger
+            @rich = User.find_by(username: author)
+            @meeptown = Channel.where(name: name).where(admin_id: @rich.id)
+            if @meeptown.length == 1 
+                @channel = @meeptown[0]
+                render :show
+            else
+                render json: ["Couldn't find Meeptown!"], status: 420
+            end
         else
             @channels = Channel.where(is_private: false)
             if @channels
