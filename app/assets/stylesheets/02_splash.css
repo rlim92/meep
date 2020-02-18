@@ -10,16 +10,20 @@ body {
 }
 
 .already-link {
-    color: #1264a3;
+    /* color: #1264a3; */
+    color: whitesmoke;
     cursor: pointer;
     text-decoration: none;
-    border-bottom: 1px solid #1264a3;
+    /* border-bottom: 1px solid #1264a3; */
+    border-bottom: 1px solid whitesmoke;
     word-break: break-word;
     padding-bottom: 1px;
 }
 
 .already-link:hover {
-    border-bottom: 2px solid #1264a3;
+    /* border-bottom: 2px solid #1264a3; */
+    border-bottom: 2px solid whitesmoke;
+    /* box-shadow: 0 -2px 10px rgba(0, 0, 0, 1); */
 }
 
 .navbar {
@@ -71,10 +75,10 @@ body {
 }
 
 .navbar-ul-left-li a:hover {
-    color: #1264a3;
     cursor: pointer;
     text-decoration: none;
     border-bottom: 1px solid #1264a3;
+    border-bottom: 1px solid whitesmoke;
     word-break: break-word;
 }
 
@@ -151,10 +155,11 @@ body {
 }
 
 .nav-login:hover {
-    color: #1264a3;
+    /* color: #1264a3; */
     cursor: pointer;
     text-decoration: none;
     border-bottom: 1px solid #1264a3;
+    border-bottom: 1px solid whitesmoke;
     word-break: break-word;
 }
 
@@ -164,6 +169,7 @@ body {
 
 .splash.section-1 {
     display: flex;
+    background-color: #443642; 
     background-image: url("hashtag-slack.png");
     /* background-color: #E5E1DC; */
     background-size: cover;
@@ -203,6 +209,7 @@ body {
 
 .subsection-1 {
     width: 50%;
+    /* background-color: #443642;  */
     color: whitesmoke;
 }
 
@@ -373,6 +380,7 @@ body {
 
 .splash.contact {
     /* background-color: #f5f5f5; */
+    background-color: #443642; 
     background-image: url("slack-head.png");
     background-size: cover;
     background-repeat: no-repeat;
