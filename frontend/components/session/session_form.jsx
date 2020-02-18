@@ -69,7 +69,9 @@ class SessionForm extends React.Component {
 
         if (this.props.errors.length) {
             errors = this.props.errors.map( error => {
-                return <p className ='errors' >{error}!</p>
+                return (
+                    <p className ='errors' >{error}!</p>
+                )
             })
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].classList.add('error');

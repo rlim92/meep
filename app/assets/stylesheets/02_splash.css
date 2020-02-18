@@ -171,7 +171,7 @@ body {
     pointer-events: none;
     position: absolute;
     width: 100%;
-    /* height: 100%; */
+    height: 622px;
     z-index: -1;
     right: 0px;
     top: 0px;

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class ChannelForm extends React.Component {
     constructor(props) {
         super(props);
@@ -32,35 +31,59 @@ class ChannelForm extends React.Component {
         }
     }
 
+    exitForm(e) {
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
             <div className="channel-form-container">
                 <form className="channel-form" onSubmit={this.handleSubmit}>
-                    <label className="input-label">Name
+                    <div className="create-header">
+                        <h2 className="create-title">Create a Channel</h2>
+                        <img 
+                            className="x-button" 
+                            src="https://image.flaticon.com/icons/svg/2089/2089650.svg" 
+                            width="25" 
+                            height="25"
+                            onClick={this.exitForm.bind(this)}
+                        />
+                    </div>
+                    <div className="create-form-info">
+                        <p className="create-blurb">Channels are where your team communicates. 
+                            They’re best when organized around a topic 
+                            — #marketing, for example.
+                        </p>
+                    </div>
+                    <label className="input-label"><strong>Name</strong>
+                        <br/>
                         <input 
-                            className="input name"
+                            className="create-input name"
                             type="text"
                             value={this.state.name}
                             onChange={this.update('name')}
                         />
                     </label>
-                    <label className="input-label">Description(optional)
+                    <label className="input-label"><strong>Description</strong> (optional)
+                        <br/>
                         <input
-                            className="input description"
+                            className="create-input description"
                             type="text"
                             value={this.state.description}
                             onChange={this.update('description')}
                         />
+                        {/* <p className="blurb">What's this channel about?</p> */}
                     </label>
-                    <p className="blurb">What's this channel about?</p>
-                    <label>Private:
-                        <input 
-                            className="isPrivate"
-                            type="checkbox"
-                            onClick={this.handleClick}
-                        />
-                    </label>
-                    <button>{this.props.formType}</button>
+                    <div className="create-bottom">
+                        <label className="input-label">Private:
+                            <input 
+                                className="isPrivate"
+                                type="checkbox"
+                                onClick={this.handleClick}
+                            />
+                        </label>
+                        <button className="form-button">{this.props.formType}</button>
+                    </div>
                 </form>
             </div>
         );
