@@ -8,6 +8,7 @@
     /* height: 100%; */
     background-color: #3F0E40;
     background-color: #443642;
+    background-color: #2a2d32;
     overflow-y: scroll;
     height: 100vh;
 }
@@ -53,8 +54,9 @@
     color: #CFC3CF;
     font-size: 15px;
     padding-left: 12px;
+    margin-top: 13px;
     padding-bottom: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 2px;
     /* width: 50%; */
 }
 
@@ -76,9 +78,13 @@
     transition: opacity .1s ease-out; */
 }
 
-.create-link:before {
-    /* content: "\f067"; */
-    content: "\E228";
+.create-button {
+    filter: invert(0.7);
+    padding-right: 3px;
+}
+
+.create-button:hover {
+    filter: invert(1);
 }
 
 .channels-ul {
@@ -106,7 +112,8 @@
 }
 
 .channel-li:hover {
-    background-color: whitesmoke;
+    background-color: #443642;
+    color: whitesmoke;
     transition: 0.5s;
 }
 

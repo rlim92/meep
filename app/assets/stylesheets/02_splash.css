@@ -107,8 +107,11 @@ body {
     border: none;
     cursor: pointer;
     background-color: rgb(97, 31, 105);
+    color: #443642;
+    background-color: whitesmoke;
+    /* background-color: lightgray; */
     /* background-color: #70cadb; */
-    color: whitesmoke;
+    color: black;
     text-align: center;
     font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     font-weight: 450;
@@ -123,6 +126,9 @@ body {
 
 .nav-signup:hover {
     background-color: rgb(74, 21, 75);
+    background-color: #443642;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+    color: whitesmoke;
     transition: background 0.5s;
 }
 
@@ -216,7 +222,9 @@ body {
     border: none;
     cursor: pointer;
     background-color: rgb(97, 31, 105);
+    background-color: whitesmoke;
     color: whitesmoke;
+    color: #2a2d32;
     font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 500;
@@ -230,12 +238,15 @@ body {
     margin-right: 8px;
     text-align: center;
     text-decoration: none;
-    transition: background 0.5s;
+    transition: background 0.3s;
 }
 
 .signup:hover {
     background-color: rgb(74, 21, 75);
-    transition: background 0.5s;
+    background-color: #2a2d32;
+    color: whitesmoke;
+    transition: background 0.3s;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
 }
 
 .demo {
@@ -474,4 +485,8 @@ body {
 .footer {
     font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     font-size: 15px;
+}
+
+.png {
+    filter: invert(1);
 }

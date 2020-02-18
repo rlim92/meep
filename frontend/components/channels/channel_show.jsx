@@ -84,12 +84,12 @@ class ChannelShow extends React.Component {
         }
 
         return (
-            <div>
+            <div className="show-container">
                 <div className="chatlog channel">
                     <div className="channel-top-info">
                         <h3 className="channel-name">#{name}</h3>
                         <div className="member-list">
-                            <img className="member-icon" src="https://pngimage.net/wp-content/uploads/2018/06/white-person-icon-png-2.png" width="15"/>
+                            <img className="png member-icon" src="https://image.flaticon.com/icons/svg/1077/1077114.svg" width="12"/>
                             <p className="member-count">{memberCount}</p>
                         </div>
                     </div>

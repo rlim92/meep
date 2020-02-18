@@ -51,7 +51,7 @@ class Splash extends React.Component {
                     </iframe>
                     <div className="inbox-items">
                         <div>
-                            <img src="https://image.flaticon.com/icons/svg/589/589380.svg" width="50"/>
+                            <img className="png" src="https://image.flaticon.com/icons/svg/589/589380.svg" width="50"/>
                             <h3>Conversations, organized</h3>
                             <span>
                                 Instead of a single overstuffed inbox, 
@@ -60,7 +60,7 @@ class Splash extends React.Component {
                             </span>
                         </div>
                         <div>
-                            <img src="https://image.flaticon.com/icons/svg/2496/2496396.svg" width="50"/>
+                            <img className="png" src="https://image.flaticon.com/icons/svg/2496/2496396.svg" width="50"/>
                             <h3>Get looped in, not out</h3>
                             <span>
                                 Meep makes it simple to follow 
@@ -69,7 +69,7 @@ class Splash extends React.Component {
                             </span>
                         </div>
                         <div>
-                            <img src="https://image.flaticon.com/icons/svg/2076/2076001.svg" width="50"/>
+                            <img className="png" src="https://image.flaticon.com/icons/svg/2076/2076001.svg" width="50"/>
                             <h3>Give focus a chance</h3>
                             <span>
                                 Unlike email, Meep lets you choose 

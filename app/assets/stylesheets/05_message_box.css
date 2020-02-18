@@ -36,10 +36,15 @@
     color: rgb(188, 221, 222);
 }
 
+.show-container {
+    background-color: #443642;
+}
+
 .chatlog.channel {
   display: flex;
   flex-direction: column;
   align-items: left;
+  background-color: #443642;
 }
 
 .chatlog-ul {
