@@ -33,8 +33,12 @@ class ChannelIndex extends React.Component {
                 </div>
                 <ul className="channels-ul">
                     {channelItemLis}
+                    <li>
+                    </li>
+                    <li className="channel-li add-ch">
+                        <Link to="/home/channels">+ Add a channel</Link>
+                    </li>
                 </ul>
-                <Link to="/home/channels">+ Add a channel</Link>
             </div>
         );
     };

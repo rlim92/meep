@@ -1,5 +1,7 @@
-// import React from 'react';
-// import { connect } from 'react-redux';
+import React from 'react';
+import { connect } from 'react-redux';
+import Filler from './filler';
+
 // import ChannelShow from '../channels/channel_show'
 // import { fetchChannel } from '../../actions/channel_actions';
 // import { receiveMessage, fetchChannelMessages } from '../../actions/message_actions';
@@ -24,4 +26,4 @@
 // };
 
 
-// export default connect(mSTP, mDTP)(ChannelShow);
+export default connect(null, null)(Filler);

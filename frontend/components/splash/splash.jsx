@@ -24,6 +24,7 @@ class Splash extends React.Component {
                 <section className='splash section-1'>
                     <div className='subsection-1'>
                         {/* <img src="{window.slackBackground}"/> */}
+                        <img className="splash-background" src="https://static.gosquared.com/images/liquidicity/18_11_13_slack/18_11_08_slack_tick_crop@2x.png"/>
                         <h1 className="section-1 head">Meep replaces email inside your company</h1>
                         <p>
                             Keep conversations organized in Meep, 
@@ -44,7 +45,7 @@ class Splash extends React.Component {
                         team a shared view of progress and purpose.
                     </p>
                     <br/>
-                    <iframe width="870" height="489.38" 
+                    <iframe className="splash-video" width="870" height="489.38" 
                         src="https://www.youtube.com/embed/AmUCLnN56f0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; 
                         picture-in-picture">
@@ -104,16 +105,17 @@ class Splash extends React.Component {
                     </div>
                 </section>
                 <section className='splash contact'>
+                    <img className="splash-background" src="https://static.gosquared.com/images/liquidicity/18_11_13_slack/18_11_08_slack_head@2x.png" />
                     <h1>Contact Me</h1>
                     <ul className="contact-ul">
                         <li>
                             <a target="_blank" href="https://github.com/rlim92">
-                                <img src={window.github} width="100"/>
+                                <img className="contact-github" src={window.github} width="100"/>
                             </a>
                         </li>
                         <li>
                             <a target="_blank" href="https://www.linkedin.com/in/richard-lim-7100a4a7/">
-                                <img src="https://www.iconsdb.com/icons/preview/white/linkedin-3-xxl.png" width="100"/>
+                                <img className="contact-linked" src="https://www.iconsdb.com/icons/preview/white/linkedin-3-xxl.png" width="100"/>
                             </a>
                         </li>
                     </ul>

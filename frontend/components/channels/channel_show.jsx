@@ -78,7 +78,6 @@ class ChannelShow extends React.Component {
                 return <MessageItem 
                     key={[msg.id, msg.id]}
                     message={msg}
-                    // channelName={this.props.channel.name}
                 />
             })
         }
@@ -87,10 +86,15 @@ class ChannelShow extends React.Component {
             <div className="show-container">
                 <div className="chatlog channel">
                     <div className="channel-top-info">
-                        <h3 className="channel-name">#{name}</h3>
-                        <div className="member-list">
-                            <img className="png member-icon" src="https://image.flaticon.com/icons/svg/1077/1077114.svg" width="12"/>
-                            <p className="member-count">{memberCount}</p>
+                        <div className="channel-top right">
+                            <h3 className="channel-name">#{name}</h3>
+                            <div className="member-list">
+                                <img className="png member-icon" src="https://image.flaticon.com/icons/svg/1077/1077114.svg" width="12"/>
+                                <p className="member-count">{memberCount}</p>
+                            </div>
+                        </div>
+                        <div className="channel-top left">
+                            <img className="cog" src="https://image.flaticon.com/icons/svg/2099/2099174.svg" width="20" />
                         </div>
                     </div>
                     <ul className="chatlog-ul">
