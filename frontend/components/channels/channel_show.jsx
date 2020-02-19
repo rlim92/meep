@@ -99,9 +99,9 @@ class ChannelShow extends React.Component {
             })
         }
         let adminOptions;
-        if (this.props.channel && this.props.channel.admin_id === this.props.currentUserId) {
-            return null;
-        }
+        // if (this.props.channel && this.props.channel.admin_id === this.props.currentUserId) {
+        //     return null;
+        // }
 
         return (
 
