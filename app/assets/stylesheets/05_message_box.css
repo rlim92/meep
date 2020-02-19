@@ -69,7 +69,7 @@
 
 }
 
-.cog-li.leave:hover {
+.cog-li:hover {
     background-color: #1064a3;
     color: #FFFFFF;
 }

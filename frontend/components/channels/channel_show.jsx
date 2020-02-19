@@ -81,15 +81,30 @@ class ChannelShow extends React.Component {
         }
     }
 
+    deleteChannel() {
+        
+    }
+
     render() {
         let chatlog;
         let name;
         let memberCount = 0;
+        let adminOptions;
 
         if (this.props.channel && this.props.channel.id == this.props.match.params.channelId) {
 
             name = this.props.channel.name;
             memberCount = this.props.channel.member_ids.length
+
+            if (this.props.channel.admin_id === this.props.currentUserId) {
+                adminOptions = (
+                    <li
+                        className="cog-li delete"
+                        onClick={this.deleteChannel}>
+                        Delete #{name}
+                    </li>
+                )
+            }
 
             chatlog = Object.values(this.props.messages).map( msg => {
                 return <MessageItem 
@@ -98,7 +113,6 @@ class ChannelShow extends React.Component {
                 />
             })
         }
-        let adminOptions;
         // if (this.props.channel && this.props.channel.admin_id === this.props.currentUserId) {
         //     return null;
         // }
@@ -124,9 +138,7 @@ class ChannelShow extends React.Component {
                                         onClick={this.leaveChannel.bind(this)}>
                                         Leave #{name}
                                     </li>
-                                    {/* <li className="cog-li">
-
-                                    </li> */}
+                                    {adminOptions}   
                                 </div>
                             </div>
                             <img className="cog" onClick={this.openCog.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
