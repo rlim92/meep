@@ -98,8 +98,14 @@ class ChannelShow extends React.Component {
                 />
             })
         }
+        let adminOptions;
+        if (this.props.channel && this.props.channel.admin_id === this.props.currentUserId) {
+            return null;
+        }
 
         return (
+
+
             <div className="show-container">
                 <div className="chatlog channel">
                     <div className="channel-top-info">
