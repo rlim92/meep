@@ -5,6 +5,11 @@ body {
     color: whitesmoke;
 }
 
+/* ul {
+    margin: 0px;
+    padding: 0px;
+} */
+
 .already {
     font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     font-size: 14px;

@@ -27,24 +27,50 @@
 
 .cog-list {
     display: none;
-
-}
-
-.cog-ul {
-    /* list-style: none; */
-    /* display: none; */
+    /* position: absolute; */
+    position: fixed;
+    /* top: 0; */
+    /* bottom: 0; */
+    right: 25px;
+    top: 50px;
+    /* left: 0; */
+    /* background: rgba(0, 0, 0, 0.7); */
+    /* z-index: 10; */
     background-color: #222429;
-    box-shadow: 0 0 0 1px var(--saf-0),0 4px 12px 0 rgba(0,0,0,.12);
+    box-shadow: 0 0 0 1px rgba(232,232,232,0.13),0 4px 12px 0 rgba(0,0,0,.12);
     /* background-color: rgba(var(--sk_foreground_min_solid,248,248,248),1); */
     border-radius: 6px;
-    width: 300px;
-    max-width: 360px;
-    min-width: 200px;
+    /* width: 300px; */
+    /* max-width: 360px; */
+    min-width: 150px;
     overflow-y: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* padding-left: 0px; */
+
 }
 
-.leave-channel {
+.cog-list.active {
+    display: block;
+}
+
+.cog-li {
     list-style: none;
+    /* padding: 10px; */
+    padding-top: 4px;
+    padding-bottom: 5px;
+    padding-right: 24px;
+    padding-left: 24px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #D1D2D3;
+    cursor: pointer;
+
+}
+
+.cog-li.leave:hover {
+    background-color: #1064a3;
+    color: #FFFFFF;
 }
 
 .message {
@@ -56,9 +82,8 @@
     /* font-size: 15px; */
     line-height: 1.46668;
     padding-left: 40px;
-    /* padding-top:5px; */
-    padding-bottom:5px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
+    padding-bottom: 4px;
 }
 
 .message:hover {
@@ -74,7 +99,6 @@
     /* color: rgb(188, 221, 222); */
 }
 
-
 .message-author span {
     font-size: 12px;
     color: #616061;
@@ -84,34 +108,36 @@
 .message-msg {
     margin-top: 3px;
     /* font-weight: 200; */
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     color: rgb(188, 221, 222);
 }
 
 .show-container {
     background-color: #443642;
     background-color: rgba(25, 28, 33, 1);
+    background-color: #191c21;
 }
 
 .chatlog.channel {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  background-color: #443642;
-  background-color: rgba(25, 28, 33, 1);
-  background-color: rgba(25,28,33,1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #443642;
+    background-color: rgba(25, 28, 33, 1);
+    background-color: rgba(25,28,33,1);
+    background-color: #191c21;
 }
 
 .chatlog-ul {
     margin-top: 0px;
-  overflow-y: scroll;
-  height: 74vh;
-  width: 84.6vw;
-  border-top: 1px solid #34363b;
-  margin-bottom: 0px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  padding-left: 0px;
+    overflow-y: scroll;
+    height: 74vh;
+    width: 84.6vw;
+    border-top: 1px solid #34363b;
+    margin-bottom: 0px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 /* 
@@ -135,6 +161,7 @@
     padding-left: 38px;
     padding-top: 12px;
     padding-bottom: 49px;
+    padding-right: 30px;
     /* margin-bottom: 3px; */
     line-height: 1.46668;
     font-size: 15px;
@@ -199,3 +226,4 @@
 .hidden {
     display: none;
 }
+

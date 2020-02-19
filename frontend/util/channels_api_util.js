@@ -43,6 +43,17 @@ export const addChMember = (userId, channelId) => {
     });
 }
 
+export const removeChMember = (leaverId, channelId) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `api/channels/${channelId}`,
+        data: {
+            leaverId,
+            channelId
+        }
+    });
+}
+
 export const createChannel = (channel) => {
     return $.ajax({
         method: "POST",

@@ -7,7 +7,15 @@ class SideBar extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        // this.props.fetchUserChannels(this.props.currentUserId);
+    }
+
     render() {
+        let name;
+        if (this.props.user) {
+            name = this.props.user.username;
+        }
         return (
             <div className="home-container sidebar">
                 <h1 className="workplace">
@@ -19,7 +27,7 @@ class SideBar extends React.Component {
                         <span className="green"><strong>p</strong></span>
                     </Link>
                 </h1>
-                <p className="sidebar-username">{this.props.user.username}</p>
+                <p className="sidebar-username">{name}</p>
                 <button className="logout" onClick={this.props.logout}>Log out</button>
                 <ChannelIndex />
             </div>

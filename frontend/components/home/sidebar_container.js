@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
-import { logout } from '../../actions/session_actions';
+import { logout, fetchCurrentUser } from '../../actions/session_actions';
+import { fetchUserChannels } from '../../util/channels_api_util';
 
 const mSTP = (state) => {
     return {
-        user: state.entities.users[state.session.id]
+        user: state.entities.users[state.session.id],
+        currentUserId: state.session.id
     }
 }
 
 const mDTP = (dispatch) => {
     return {
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        fetchUserChannels: (id) => dispatch(fetchUserChannels(id))
     }
 }
 

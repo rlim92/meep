@@ -65,12 +65,22 @@ class ChannelShow extends React.Component {
     }
 
     leaveChannel() {
-        
+        // const { removeChMember, currentUserId, fetchCurrentUser, channel } = this.props;
+        // removeChMember(currentUserId, channel.id).then(
+        //     () => fetchCurrentUser(currentUserId).then(
+        //         this.props.history.push('home')
+        //     )
+        // );
     }
 
     openCog() {
+        // debugger;
         const cogList = document.getElementsByClassName('cog-list')[0];
-        cogList.classList.remove('hidden');
+        if (cogList.classList.contains('active')) {
+            cogList.classList.remove('active');
+        } else {
+            cogList.classList.add('active');
+        }
     }
 
     render() {
@@ -103,16 +113,19 @@ class ChannelShow extends React.Component {
                             </div>
                         </div>
                         <div className="channel-top left">
-                            <div className="cog-list" onClick={this.openCog.bind(this)}> 
-                                <ul classname="cog-ul">
+                            <div className="cog-list"> 
+                                <div className="cog-ul">
                                     <li
-                                        className="leave-channel"
+                                        className="cog-li leave"
                                         onClick={this.leaveChannel.bind(this)}>
                                         Leave #{name}
                                     </li>
-                                </ul>
+                                    {/* <li className="cog-li">
+
+                                    </li> */}
+                                </div>
                             </div>
-                            <img className="cog" src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
+                            <img className="cog" onClick={this.openCog.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
                         </div>
                     </div>
                     <ul className="chatlog-ul">

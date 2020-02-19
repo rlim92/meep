@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/channels_api_util';
+import { receiveCurrentUser } from '../actions/session_actions';
 
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const RECEIVE_ALL_CHANNELS = 'RECEIVE_ALL_CHANNELS';
@@ -19,9 +20,10 @@ const receiveAllChannels = (channels) => {
     };
 };
 
-const removeChannel = (channelId) => {
+const removeChannel = (channel) => {
     return {
-        type: RECEIVE_ALL_CHANNELS
+        type: REMOVE_CHANNEL,
+        channel
     };
 };
 
@@ -77,6 +79,14 @@ export const addChMember = (userId, channelId) => {
     return (dispatch) => {
         return APIUtil.addChMember(userId, channelId).then(channel => {
             dispatch(receiveChannel(channel));
+        });
+    };
+};
+
+export const removeChMember = (leaverId, channelId) => {
+    return (dispatch) => {
+        return APIUtil.removeChMember(leaverId, channelId).then(channel => {
+            dispatch(removeChannel(channel));
         });
     };
 };

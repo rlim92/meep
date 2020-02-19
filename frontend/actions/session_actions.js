@@ -24,6 +24,14 @@ const receiveErrors = (errors) => {
     };
 };
 
+export const fetchCurrentUser = (userId) => {
+    return (dispatch) => {
+        return APIUtil.fetchCurrentUser(userId).then(
+            (user) => { dispatch(receiveCurrentUser(user)); }
+        )
+    };
+};
+
 export const login = (user) => {
     return (dispatch) => {
         return APIUtil.login(user).then(
