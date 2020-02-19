@@ -4,7 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.web_socket_server_url = "wss://meep-slack.herokuapp.com/cable"
+  config.web_socket_server_url = "ws://meep-slack.herokuapp.com/cable"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -80,6 +80,8 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_cable.allowed_request_origins = ["meep-slack.herokuapp.com"]
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
