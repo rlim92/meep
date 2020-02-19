@@ -62,6 +62,7 @@
     padding-right: 24px;
     padding-left: 24px;
     font-family: 'Lato', sans-serif;
+    font-weight: 300;
     font-size: 15px;
     color: #D1D2D3;
     cursor: pointer;
@@ -101,13 +102,14 @@
 
 .message-author span {
     font-size: 12px;
+    font-weight: 300;
     color: #616061;
     color: #D1D2D3;
 }
 
 .message-msg {
     margin-top: 3px;
-    /* font-weight: 200; */
+    font-weight: 300;
     margin-bottom: 0px;
     color: rgb(188, 221, 222);
 }
@@ -165,13 +167,14 @@
     /* margin-bottom: 3px; */
     line-height: 1.46668;
     font-size: 15px;
+    font-weight: 300;
     font-family: 'Lato', sans-serif;
     border: 1px solid #565856;
 }
 
 .input.message::placeholder {
     color: rgba(var(--sk_foreground_high_solid,134,134,134),1);
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .input.message:focus {
@@ -218,7 +221,8 @@
     padding: 0px;
     margin-top: 2px;
     /* margin-left: 40px; */
-    font-family: 'Lato', sans-serif;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
     font-size: 13px;
     margin-bottom: 7px;
 }

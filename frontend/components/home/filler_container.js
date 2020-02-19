@@ -2,17 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Filler from './filler';
 import { fetchMeeptown } from '../../actions/channel_actions';
+import { fetchCurrentUser } from '../../actions/session_actions';
 
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        channels: state.entities.channels
+        channels: state.entities.channels,
+        currentUserId: state.session.id
     }
 };
 
 const mDTP = (dispatch) => {
     return {
-        fetchMeeptown: () => dispatch(fetchMeeptown())
+        fetchCurrentUser: (id) => dispatch(fetchCurrentUser(id))
     };
 };
 

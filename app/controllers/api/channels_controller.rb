@@ -72,8 +72,9 @@ class Api::ChannelsController < ApplicationController
 
             @channel = Channel.find(channel_id)
             if @channel
+                @membership = @channel.memberships.where(member_id: user_id)[0]
                 @channel.member_ids -= [user_id]
-                render :show
+                render :membership
             else
                 render json: ["Channel not found!"], status: 420
             end

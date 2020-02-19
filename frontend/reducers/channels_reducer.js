@@ -10,8 +10,9 @@ export default (state = {}, action) => {
         case RECEIVE_ALL_CHANNELS:
             return action.channels;
         case REMOVE_CHANNEL:
+            // debugger
             newState = merge({}, state);
-            delete newState[action.channel.id]
+            delete newState[action.channelId]
             return newState;
         default:
             return state;

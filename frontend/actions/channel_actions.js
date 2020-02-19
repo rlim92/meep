@@ -20,10 +20,11 @@ const receiveAllChannels = (channels) => {
     };
 };
 
-const removeChannel = (channel) => {
+const removeChannel = (membership) => {
     return {
         type: REMOVE_CHANNEL,
-        channel
+        userId: membership.member_id,
+        channelId: membership.membershipable_id
     };
 };
 
@@ -85,8 +86,8 @@ export const addChMember = (userId, channelId) => {
 
 export const removeChMember = (leaverId, channelId) => {
     return (dispatch) => {
-        return APIUtil.removeChMember(leaverId, channelId).then(channel => {
-            dispatch(removeChannel(channel));
+        return APIUtil.removeChMember(leaverId, channelId).then(membership => {
+            dispatch(removeChannel(membership));
         });
     };
 };

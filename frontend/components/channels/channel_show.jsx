@@ -65,12 +65,10 @@ class ChannelShow extends React.Component {
     }
 
     leaveChannel() {
-        // const { removeChMember, currentUserId, fetchCurrentUser, channel } = this.props;
-        // removeChMember(currentUserId, channel.id).then(
-        //     () => fetchCurrentUser(currentUserId).then(
-        //         this.props.history.push('home')
-        //     )
-        // );
+        const { removeChMember, currentUserId, channel } = this.props;
+        removeChMember(currentUserId, channel.id).then(
+            () => this.props.history.push('/home')
+        );
     }
 
     openCog() {

@@ -9,10 +9,12 @@ class ChannelIndex extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchUserChannels(this.props.currentUser.id)
     }
 
     render() {
+        // debugger
         const channelItemLis = Object.values(this.props.channels).map( ch => {
             return (
                 <ChannelIndexItem 
