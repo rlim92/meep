@@ -115,7 +115,7 @@ class Splash extends React.Component {
                         </li>
                         <li>
                             <a target="_blank" href="https://www.linkedin.com/in/richard-lim-7100a4a7/">
-                                <img className="contact-linked" src="https://www.iconsdb.com/icons/preview/white/linkedin-3-xxl.png" width="100"/>
+                                <img className="contact-linked" src={window.linkedin} width="100"/>
                             </a>
                         </li>
                     </ul>
