@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     background-color: #2a2d32;
+    /* background-color: #19171D; */
     color: whitesmoke;
 }
 
@@ -115,7 +116,7 @@ body {
     background-color: whitesmoke;
     /* background-color: lightgray; */
     /* background-color: #70cadb; */
-    color: black;
+    /* color: black; */
     text-align: center;
     font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     font-weight: 450;

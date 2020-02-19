@@ -10,18 +10,18 @@ class Api::ChannelsController < ApplicationController
             else
                 render json: @channels.errors.full_messages, status: 420
             end
-        elsif params[:name] && params[:author]
-            name = params[:name]
-            author = params[:author]
-            # debugger
-            @rich = User.find_by(username: author)
-            @meeptown = Channel.where(name: name).where(admin_id: @rich.id)
-            if @meeptown.length == 1 
-                @channel = @meeptown[0]
-                render :show
-            else
-                render json: ["Couldn't find Meeptown!"], status: 420
-            end
+        # elsif params[:name] && params[:author]
+        #     name = params[:name]
+        #     author = params[:author]
+        #     # debugger
+        #     @rich = User.find_by(username: author)
+        #     @meeptown = Channel.where(name: name).where(admin_id: @rich.id)
+        #     if @meeptown.length == 1 
+        #         @channel = @meeptown[0]
+        #         render :show
+        #     else
+        #         render json: ["Couldn't find Meeptown!"], status: 420
+        #     end
         else
             @channels = Channel.where(is_private: false)
             if @channels
@@ -57,12 +57,25 @@ class Api::ChannelsController < ApplicationController
             # debugger
             user_id = params[:userId].to_i
             channel_id = params[:channelId].to_i
+
             @channel = Channel.find(channel_id)
+
             if @channel.member_ids.include?(user_id)
                 render json: ["You are already a member of this channel!"], status: 420
             else
                 @channel.members << User.find(user_id)
                 render :show
+            end
+        elsif params[:leaverId]
+            user_id = params[:leaverId].to_i
+            channel_id = params[:id]
+
+            @channel = Channel.find(channel_id)
+            if @channel
+                @channel.member_ids -= [user_id]
+                render :show
+            else
+                render json: ["Channel not found!"], status: 420
             end
         else
             @channel = Channel.find(params[:id])

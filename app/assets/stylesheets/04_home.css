@@ -6,9 +6,12 @@
 .home-container.sidebar {
     min-width: 220px;
     /* height: 100%; */
-    background-color: #3F0E40;
+    /* background-color: #3F0E40;
     background-color: #443642;
-    background-color: #2a2d32;
+    background-color: #2a2d32; */
+    /* background-color: #19171D; */
+    background-color: rgba(24,22,29,1);
+    border-right: 1px solid #333137;
     overflow-y: scroll;
     height: 100vh;
     /* border-right: 1px solid #2a2d32; */
@@ -29,15 +32,6 @@
     padding-left: 12px;
 }
 
-.sidebar-username {
-    font-family: Lato, sans-serif;
-    font-size: 14px;
-    color: #CFC3CF;
-    margin-top: 0px;
-    padding-top: 0px;
-    padding-left: 12px;
-}
-
 .logo {
     text-decoration: none;
     font-family: Slack-Larsseit,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
@@ -52,7 +46,7 @@
 
 .channels-header {
     font-family: Lato, sans-serif;
-    color: #CFC3CF;
+    color: rgb(163,163,166);
     font-size: 15px;
     padding-left: 12px;
     margin-top: 13px;
@@ -62,7 +56,7 @@
 }
 
 .create-link {
-    margin-top: 13px;
+    margin-top: 18px;
     /* color: white; */
     /* content: "\E228"; */
     /* font-family: Slack v2;
@@ -81,7 +75,8 @@
 
 .create-button {
     filter: invert(0.7);
-    padding-right: 3px;
+    padding-right: 12px;
+    /* padding-top: 2px; */
 }
 
 .create-button:hover {
@@ -92,7 +87,7 @@
     font-family: Lato, sans-serif;
     margin: 0px;
     padding: 0px;
-    color: #CFC3CF;
+    color: rgb(163,163,166);
     list-style: none;
     font-size: 15px;
     font-weight: 400;
@@ -102,20 +97,30 @@
 
 .channels-ul a {
     text-decoration: none;
-    color: #CFC3CF;
+    color: rgb(163,163,166);
 }
 
 .channel-li {
     padding: 4px;
     padding-left: 18px;
     font-weight: 50;
-    transition: 0.5s;
+    color: rgb(163,163,166);
+    /* transition: 0.5s; */
+    /* -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    /* color: buttontext; */
+    /* letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none; */
 }
 
 .channel-li:hover {
     background-color: #443642;
+    /* background-color: #9a9c9e; */
     color: whitesmoke;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 .hashtag {
@@ -130,4 +135,14 @@
 
 .add-ch {
     margin-top: 20px;
+}
+
+.sidebar-username {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: thin;
+    color: rgb(163,163,166);
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 12px;
 }

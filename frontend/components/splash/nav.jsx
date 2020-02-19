@@ -2,33 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
-    let rightSide;
-    if (props.currentUser) {
-        rightSide = () => (
-            <ul>
-                <li className="logout-li">
-                    <button className="logout" onClick={props.logout}>Log out</button>
-                </li>
-            </ul>
-        );
-    } else {
-        rightSide = () => (
-            <ul className="navbar-ul right">
-                <li>
-                    <Link className="nav-login" to="/login">Sign in</Link>
-                </li>
-                <li>
-                    <Link className="nav-signup" to="/signup">Get Started</Link>
-                </li>
-            </ul>
-        );
-    }
+
     return (
         <nav className="navbar">
             <div className='divnav-left'>
-                {/* <span className="logo">Meep</span> */}
                 <ul className="navbar-ul left">
-                    {/* <img src="https://www.freepnglogos.com/uploads/company-logo-png/company-logo-transparent-png-19.png" width="50"/> */}
                     <li>
                         <Link className="logo" to="/">
                             <img src="https://image.flaticon.com/icons/svg/2111/2111615.svg" width="12" />
@@ -47,7 +25,14 @@ const Nav = (props) => {
                 </ul>
             </div>
             <div>
-                {rightSide()}
+                <ul className="navbar-ul right">
+                    <li>
+                        <Link className="nav-login" to="/login">Sign in</Link>
+                    </li>
+                    <li>
+                        <Link className="nav-signup" to="/signup">Get Started</Link>
+                    </li>
+                </ul>
             </div>
         </nav>
     );

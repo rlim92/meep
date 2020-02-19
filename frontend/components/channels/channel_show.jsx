@@ -64,6 +64,15 @@ class ChannelShow extends React.Component {
         App.currentChannel.unsubscribe();
     }
 
+    leaveChannel() {
+        
+    }
+
+    openCog() {
+        const cogList = document.getElementsByClassName('cog-list')[0];
+        cogList.classList.remove('hidden');
+    }
+
     render() {
         let chatlog;
         let name;
@@ -87,14 +96,23 @@ class ChannelShow extends React.Component {
                 <div className="chatlog channel">
                     <div className="channel-top-info">
                         <div className="channel-top right">
-                            <h3 className="channel-name">#{name}</h3>
+                            <p className="channel-name"><strong>#{name}</strong></p>
                             <div className="member-list">
-                                <img className="png member-icon" src="https://image.flaticon.com/icons/svg/1077/1077114.svg" width="12"/>
+                                <img className="png member-icon" src="https://image.flaticon.com/icons/svg/1250/1250689.svg" width="12"/>
                                 <p className="member-count">{memberCount}</p>
                             </div>
                         </div>
                         <div className="channel-top left">
-                            <img className="cog" src="https://image.flaticon.com/icons/svg/2099/2099174.svg" width="20" />
+                            <div className="cog-list" onClick={this.openCog.bind(this)}> 
+                                <ul classname="cog-ul">
+                                    <li
+                                        className="leave-channel"
+                                        onClick={this.leaveChannel.bind(this)}>
+                                        Leave #{name}
+                                    </li>
+                                </ul>
+                            </div>
+                            <img className="cog" src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
                         </div>
                     </div>
                     <ul className="chatlog-ul">

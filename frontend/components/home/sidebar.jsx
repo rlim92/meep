@@ -19,7 +19,7 @@ class SideBar extends React.Component {
                         <span className="green"><strong>p</strong></span>
                     </Link>
                 </h1>
-                <h3 className="sidebar-username">{this.props.user.username}</h3>
+                <p className="sidebar-username">{this.props.user.username}</p>
                 <button className="logout" onClick={this.props.logout}>Log out</button>
                 <ChannelIndex />
             </div>
