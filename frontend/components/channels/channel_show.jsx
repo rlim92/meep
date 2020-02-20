@@ -56,6 +56,13 @@ class ChannelShow extends React.Component {
                 App.currentChannel.unsubscribe();
             }
 
+            if (prevProps.channel) {
+                const prevCh = document.getElementById(prevProps.channel.id);
+                if (prevCh && prevCh.classList.contains('current')) {
+                    prevCh.classList.remove('current');
+                } 
+            }
+
             this.createLiveConnection();
 
             const channelId = this.props.match.params.channelId;
@@ -78,12 +85,26 @@ class ChannelShow extends React.Component {
 
     coggle() {
         const cogList = document.getElementsByClassName('cog-list')[0];
-        if (cogList.classList.contains('active')) {
+        const outerDiv = document.getElementsByClassName('outer-modal-close')[0];
+        
+        if (cogList.classList.contains('active') && outerDiv.classList.contains('active')) {
             cogList.classList.remove('active');
+            outerDiv.classList.remove('active');
         } else {
             cogList.classList.add('active');
+            outerDiv.classList.remove('active');
         }
     };
+
+    // closeCog() {
+    //     const cogList = document.getElementsByClassName('cog-list')[0];
+    //     const outerDiv = document.getElementsByClassName('outer-modal-close')[0];
+
+    //     if (cogList.classList.contains('active') && outerDiv.classList.contains('active')) {
+    //         cogList.classList.remove('active');
+    //         outerDiv.classList.remove('active');
+    //     }
+    // }
 
     deleteChannel() {
         this.props.destroyChannel(this.props.channel.id).then(
@@ -96,6 +117,11 @@ class ChannelShow extends React.Component {
         let name;
         let memberCount = 0;
         let adminOptions;
+
+        const currentCh = document.getElementById(this.props.match.params.channelId);
+        if (currentCh && !currentCh.classList.contains('current')) {
+            currentCh.classList.add('current');
+        } 
 
         if (this.props.channel && this.props.channel.id == this.props.match.params.channelId) {
 
@@ -132,17 +158,19 @@ class ChannelShow extends React.Component {
                             </div>
                         </div>
                         <div className="channel-top left">
-                            <div className="cog-list"> 
-                                <div className="cog-ul">
-                                    <li
-                                        className="cog-li leave"
-                                        onClick={this.leaveChannel.bind(this)}>
-                                        Leave #{name}
-                                    </li>
-                                    {adminOptions}   
+                            {/* <div className="outer-modal-close" onClick={this.closeCog.bind(this)}> */}
+                                <div className="cog-list"> 
+                                    <div className="cog-ul">
+                                        <li
+                                            className="cog-li leave"
+                                            onClick={this.leaveChannel.bind(this)}>
+                                            Leave #{name}
+                                        </li>
+                                        {adminOptions}   
+                                    </div>
                                 </div>
-                            </div>
-                            <img className="cog" onClick={this.coggle.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
+                                <img className="cog" onClick={this.coggle.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
+                            {/* </div> */}
                         </div>
                     </div>
                     <ul className="chatlog-ul">

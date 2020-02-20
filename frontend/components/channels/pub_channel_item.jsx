@@ -9,17 +9,19 @@ class PubChItem extends React.Component {
     };
 
     handleClick() {
-        const { addChMember, currentUserId, channel, fetchChannel } = this.props;
+        const { addChMember, currentUserId, channel, fetchChannel, fetchCurrentUser } = this.props;
         addChMember(currentUserId, channel.id).then(
             () => fetchChannel(channel.id)
-        ).then( 
-            () => this.props.history.push(`/home/`)
+        ).then(
+            () => fetchCurrentUser(currentUserId)
+        ).then(
+            () => this.props.history.push(`/home/channels/${channel.id}`)
         );
     };
 
     render() {
-        // let button;
         const { currentUserId, channel } = this.props;
+        
         if (channel.member_ids.includes(currentUserId)) {
             return null;
         }

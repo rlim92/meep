@@ -33,6 +33,7 @@ class PublicChannelIndex extends React.Component {
                     fetchChannel={this.props.fetchChannel}
                     channel={ch}
                     history={this.props.history}
+                    fetchCurrentUser={this.props.fetchCurrentUser}
                 />
             )
         })

@@ -5,21 +5,22 @@ class ChannelIndexItem extends React.Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        const { currentChId, channel } = this.props;
-        if (currentChId === channel.id) {
-            const current = document.getElementById(channel.id);
-            // debugger
-            if (!current.classList.contains('current')) {
-                current.classList.add('current');
-            }
-        } else {
-            const current = document.getElementById(channel.id);
-            if (current.classList.contains('current')) {
-                current.classList.remove('current');
-            }
-        }
-    };
+    
+    // componentDidMount() {
+    //     const { currentChId, channel } = this.props;
+    //     if (currentChId === channel.id) {
+    //         const current = document.getElementById(channel.id);
+    //         // debugger
+    //         if (!current.classList.contains('current')) {
+    //             current.classList.add('current');
+    //         }
+    //     } else {
+    //         const current = document.getElementById(channel.id);
+    //         if (current.classList.contains('current')) {
+    //             current.classList.remove('current');
+    //         }
+    //     }
+    // };
 
     render() {
         return (

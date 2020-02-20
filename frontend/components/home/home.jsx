@@ -10,7 +10,7 @@ const Home = (props) => {
             <Route path={['/home', '/home/channels/:channelId', '/home/dms/:dmId']} component={Sidebar} />
             <Switch>
                 <Route path="/home/channels/:channelId" component={ChannelShow} />
-                <Route exact path="/home" component={Filler}/>
+                <Route path="/home" component={Filler}/>
             </Switch>
         </div>
     )

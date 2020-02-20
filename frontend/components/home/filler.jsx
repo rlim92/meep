@@ -6,20 +6,19 @@ class Filler extends React.Component {
         super(props);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchCurrentUser(this.props.currentUserId)
-    //     let firstChannel;
+    componentDidMount() {
+        this.props.fetchCurrentUser(this.props.currentUserId)
+        let firstChannel;
         
-    //     if (this.props.currentUser) {
-    //         firstChannel = this.props.currentUser.channel_ids[0];
-    //     }
+        if (this.props.currentUser) {
+            firstChannel = this.props.currentUser.channel_ids[0];
+        }
 
+        if (firstChannel) {
+            this.props.history.push(`/home/channels/${firstChannel}`)
+        }
 
-    //     if (firstChannel) {
-    //         this.props.history.push(`/home/channels/${firstChannel}`)
-    //     }
-
-    // }
+    }
 
     // componentDidUpdate(prevProps) {
     //     if (!prevProps.currentUser || this.props.currentUser) {
