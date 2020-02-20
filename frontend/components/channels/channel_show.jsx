@@ -87,12 +87,10 @@ class ChannelShow extends React.Component {
         const cogList = document.getElementsByClassName('cog-list')[0];
         const outerDiv = document.getElementsByClassName('outer-modal-close')[0];
         
-        if (cogList.classList.contains('active') && outerDiv.classList.contains('active')) {
+        if (cogList.classList.contains('active')) {
             cogList.classList.remove('active');
-            outerDiv.classList.remove('active');
         } else {
             cogList.classList.add('active');
-            outerDiv.classList.remove('active');
         }
     };
 

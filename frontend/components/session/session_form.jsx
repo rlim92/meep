@@ -47,11 +47,11 @@ class SessionForm extends React.Component {
     render() {
         let usernameInput = "";
         let prompt = (<span className="form-prompt">
-            Enter <strong>email</strong> and <strong>password</strong>
+            Enter <strong>email</strong> and <strong>password</strong>.
         </span>)
         if (this.props.formType === 'Sign up') {
             prompt = (<span className="form-prompt">
-                Enter <strong>email</strong>, <strong>username</strong> and <strong>password</strong>
+                Enter <strong>email</strong>, <strong>username</strong> and <strong>password</strong>.
             </span>)
             usernameInput = (
                 <input
@@ -88,12 +88,14 @@ class SessionForm extends React.Component {
                 <div className="session-form-container">
                     <form className="session-form" onSubmit={this.handleSubmit}>
                         <h3 className="input-title">{this.props.formType}</h3>
-                        {prompt}
+                        <div className="prompt-holder">
+                            {prompt}
+                        </div>
                         <input 
                             className="input email"
                             type="text"
                             value={this.state.email}
-                            placeholder="email"
+                            placeholder="you@meep.com"
                             onChange={this.update('email')}
                         />
                         {usernameInput}

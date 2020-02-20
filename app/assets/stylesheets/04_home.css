@@ -38,8 +38,21 @@
 }
 
 .contacts {
-    display:flex;
+    display: flex;
     justify-content: space-around;
+}
+
+.contacts-git, .contacts-link {
+    transition: all 0.2s;
+}
+
+.contacts-git:hover, .contacts-link:hover {
+    transition: all 0.2s;
+    width: 34px;
+    margin-bottom: -2px;
+    margin-right: -2px;
+    margin-left: -2px;
+    margin-top: -2px;
 }
 
 .prof-list {
@@ -48,8 +61,8 @@
     position: fixed;
     /* top: 0; */
     /* bottom: 0; */
-    left: 25px;
-    top: 50px;
+    left: 24px;
+    top: 60px;
     /* left: 0; */
     /* background: rgba(0, 0, 0, 0.7); */
     /* z-index: 10; */
@@ -61,8 +74,8 @@
     /* max-width: 360px; */
     min-width: 40px;
     overflow-y: auto;
-    padding-top: 10px;
-    padding-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-left: 0px;
     /* padding-left: 0px; */
 
@@ -83,8 +96,13 @@
     background-color: #121016;
 }
 
-.home-top:hover, p.sidebar-username {
+.home-top:hover .sidebar-username {
     color: rgb(209, 210, 211);
+    /* color: #FFFFFF; */
+}
+
+.home-top:hover .down-arrow {
+    filter: invert(1);
 }
 
 .fake-search {
@@ -109,11 +127,6 @@
 .fake-search:hover {
     background-color:#d1d2d333;
 }
-
-/* .jump {
-    font-weight: 300px;
-} */
-
 
 .title-and-create {
     display: flex;
@@ -233,4 +246,20 @@
     padding-top: 0px;
     padding-left: 25px;
     cursor: pointer;
+}
+
+.sidebar-username-container {
+    display: flex;
+    /* position: relative; */
+}
+
+.down-arrow {
+    /* position: absolute; */
+    /* left: 100px; */
+    padding-left: 5px;
+    margin-bottom: -3px;
+    /* bottom: 30px; */
+    /* display: static; */
+    /* margin-top: 5px; */
+    filter: invert(0.75);
 }
