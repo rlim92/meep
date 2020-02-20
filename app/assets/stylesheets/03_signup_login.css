@@ -40,13 +40,18 @@
     margin-bottom: 7px;
     /* width: 50%; */
     background-color: #007A5A;
-    background-color: #70cadb;
+    /* background-color: #70cadb;
+    background-color: #3bc5ee; */
     font-size: 20px;
     font-weight: 900;
     font-family: Lato, sans-serif;
     color: whitesmoke;
     width: 272px;
     cursor: pointer;
+}
+
+.session-button:hover {
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
 }
 
 .form-prompt {

@@ -74,7 +74,15 @@
     color: #FFFFFF;
 }
 
+.profile-icon {
+    margin-top: 5px;
+    margin-right: 9px;
+    border-radius: 3px;
+}
+
 .message {
+    display: flex;
+    justify-content: left;
     list-style: none;
     color: #1D1C1D;
     color: whitesmoke;
@@ -86,6 +94,7 @@
     margin-bottom: 0px;
     padding-bottom: 4px;
 }
+
 
 .message:hover {
     background-color: #222429;

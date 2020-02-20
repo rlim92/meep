@@ -39,9 +39,9 @@ class ChannelShow extends React.Component {
     };
 
     componentDidMount() {
-
         const { fetchChannelMembers, fetchChannelMessages } = this.props;
         const channelId = this.props.match.params.channelId;
+
         this.createLiveConnection();
 
         fetchChannelMembers(channelId).then(()=>fetchChannelMessages(channelId));
@@ -71,15 +71,14 @@ class ChannelShow extends React.Component {
         );
     }
 
-    openCog() {
-        // debugger;
+    coggle() {
         const cogList = document.getElementsByClassName('cog-list')[0];
         if (cogList.classList.contains('active')) {
             cogList.classList.remove('active');
         } else {
             cogList.classList.add('active');
         }
-    }
+    };
 
     deleteChannel() {
         
@@ -113,13 +112,8 @@ class ChannelShow extends React.Component {
                 />
             })
         }
-        // if (this.props.channel && this.props.channel.admin_id === this.props.currentUserId) {
-        //     return null;
-        // }
 
         return (
-
-
             <div className="show-container">
                 <div className="chatlog channel">
                     <div className="channel-top-info">
@@ -141,7 +135,7 @@ class ChannelShow extends React.Component {
                                     {adminOptions}   
                                 </div>
                             </div>
-                            <img className="cog" onClick={this.openCog.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
+                            <img className="cog" onClick={this.coggle.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
                         </div>
                     </div>
                     <ul className="chatlog-ul">

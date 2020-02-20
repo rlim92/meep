@@ -30,17 +30,19 @@ class PublicChannelIndex extends React.Component {
                     channel={ch}
                     history={this.props.history}
                 />
-                // <li key={[ch.id, ch.id]}>
-                //     <h3>{ch.name}</h3>
-                //     <button onClick={this.handleClick}>Join!</button>
-                // </li>
             )
         })
         return (
-            <div>
-                <ul>
-                    {pubChannels}
-                </ul>
+            <div className="add-channel-container">
+                <div className="add-channel-top">
+                    <h3>Browse Channels</h3>
+                    {/* <p>Channels you can join</p> */}
+                </div>
+                <div className="pub-list-container">
+                    <ul className="pub-ul">
+                        {pubChannels}
+                    </ul>
+                </div>
             </div>
         )
     }
