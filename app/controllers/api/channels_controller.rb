@@ -89,10 +89,13 @@ class Api::ChannelsController < ApplicationController
     end
 
     def destroy
+        # debugger
         @channel = Channel.find(params[:id])
         if @channel
+            @membership = @channel.memberships.where(member_id: current_user.id)[0]
+            # debugger
             @channel.destroy
-            render :show
+            render :membership
         else
             render json: @channel.errors.full_messages, status: 420
         end            

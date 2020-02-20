@@ -145,7 +145,7 @@
     overflow-y: scroll;
     height: 74vh;
     width: 84.6vw;
-    border-top: 1px solid #34363b;
+    border-top: 1px solid #3b3c41;
     margin-bottom: 0px;
     /* margin-bottom: 3px; */
     padding-bottom: 3px;
@@ -226,7 +226,7 @@
     margin-left: 38px;
     padding-right: 2px;
     margin-top: 2px;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
     color: #D1D2D3;
 }
 
@@ -239,7 +239,7 @@
     font-family: Lato, sans-serif;
     font-weight: 300;
     font-size: 13px;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 .hidden {

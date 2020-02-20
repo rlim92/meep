@@ -94,16 +94,16 @@ export const removeChMember = (leaverId, channelId) => {
 
 export const updateChannel = (channel) => {
     return (dispatch) => {
-        return APIUtil.updateChannel(channel).then(channel => {
-            dispatch(receiveChannel(channel));
+        return APIUtil.updateChannel(channel).then(membership => {
+            dispatch(receiveChannel(membership));
         });
     };
 };
 
 export const destroyChannel = (channelId) => {
     return (dispatch) => {
-        return APIUtil.destroyChannel(channelId).then(channel => {
-            dispatch(removeChannel(channel.id));
+        return APIUtil.destroyChannel(channelId).then(membership => {
+            dispatch(removeChannel(membership));
         });
     };
 };

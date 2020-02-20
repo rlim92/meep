@@ -57,7 +57,7 @@ class ChannelShow extends React.Component {
             }
 
             this.createLiveConnection();
-            
+
             const channelId = this.props.match.params.channelId;
             this.props.fetchChannelMembers(channelId).then(
                 this.props.fetchChannelMessages(this.props.match.params.channelId)
@@ -74,7 +74,7 @@ class ChannelShow extends React.Component {
         removeChMember(currentUserId, channel.id).then(
             () => this.props.history.push('/home')
         );
-    }
+    };
 
     coggle() {
         const cogList = document.getElementsByClassName('cog-list')[0];
@@ -86,8 +86,10 @@ class ChannelShow extends React.Component {
     };
 
     deleteChannel() {
-        
-    }
+        this.props.destroyChannel(this.props.channel.id).then(
+            () => this.props.history.push('/home')
+        );
+    };
 
     render() {
         let chatlog;
@@ -104,7 +106,7 @@ class ChannelShow extends React.Component {
                 adminOptions = (
                     <li
                         className="cog-li delete"
-                        onClick={this.deleteChannel}>
+                        onClick={this.deleteChannel.bind(this)}>
                         Delete #{name}
                     </li>
                 )
