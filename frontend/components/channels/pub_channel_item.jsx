@@ -20,16 +20,15 @@ class PubChItem extends React.Component {
     render() {
         // let button;
         const { currentUserId, channel } = this.props;
-        // if (currentUserId === channel.admin_id) {
-        //     const button = document.getElementsByClassName('pub-li')[0];
-        //     button.classList.add('cant-join');
-        // }
+        if (channel.member_ids.includes(currentUserId)) {
+            return null;
+        }
 
         return (
             <li
                 className="pub-li"
                 onClick={this.handleClick}>
-                <h3 className="pub-channel-name">{channel.name}</h3>
+                <h3 className="pub-channel-name">#{channel.name}</h3>
             </li>
         )
     }

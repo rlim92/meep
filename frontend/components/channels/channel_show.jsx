@@ -52,7 +52,12 @@ class ChannelShow extends React.Component {
             this.bottom.current.scrollIntoView();
         }
         if (!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {
+            if (App.currentChannel) {
+                App.currentChannel.unsubscribe();
+            }
+
             this.createLiveConnection();
+            
             const channelId = this.props.match.params.channelId;
             this.props.fetchChannelMembers(channelId).then(
                 this.props.fetchChannelMessages(this.props.match.params.channelId)

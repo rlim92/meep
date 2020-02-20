@@ -23,17 +23,17 @@ class ChannelForm extends React.Component {
         this.props.action(this.state).then(
             () => this.props.history.push('/home')
         );
-    }
+    };
 
     handleClick(e) {
         if (e.target.checked) {
             this.setState({ is_private: true })
-        }
-    }
+        };
+    };
 
     exitForm(e) {
-        this.props.history.push('/home')
-    }
+        this.props.history.push('/home');
+    };
 
     render() {
         return (
@@ -87,7 +87,7 @@ class ChannelForm extends React.Component {
                 </form>
             </div>
         );
-    }
+    };
 }
 
 export default ChannelForm;

@@ -164,17 +164,19 @@
 
 .message-form-container {
     margin-top: 0px;
+    /* width: calc( 100vw - 220px ); */
 }
 
 .input.message {
     width: 91%;
+    /* width: calc( 92.5vw - 220px ); */
     color: #D1D2D3;
     background-color: rgba(232,232,232,0.04);
-    margin-left: 19px;
+    margin-left: 20px;
     padding-left: 38px;
     padding-top: 12px;
     padding-bottom: 49px;
-    padding-right: 30px;
+    padding-right: 31px;
     /* margin-bottom: 3px; */
     line-height: 1.46668;
     font-size: 15px;

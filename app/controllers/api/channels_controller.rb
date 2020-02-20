@@ -23,10 +23,7 @@ class Api::ChannelsController < ApplicationController
         #         render json: ["Couldn't find Meeptown!"], status: 420
         #     end
         else
-            @channels = Channel
-                .joins(:memberships)
-                .where(:channels => { :is_private =>false})
-                .where.not(:memberships => { :member_id => current_user.id })
+            @channels = Channel.where(:channels => { :is_private => false})
             if @channels
                 render :index
             else

@@ -19,6 +19,10 @@ class PublicChannelIndex extends React.Component {
     //     );
     // }
 
+    exitBrowse(e) {
+        this.props.history.push('/home')
+    }
+
     render() {
         const pubChannels = Object.values(this.props.channels).map( ch => {
             return (
@@ -34,14 +38,31 @@ class PublicChannelIndex extends React.Component {
         })
         return (
             <div className="add-channel-container">
-                <div className="add-channel-top">
-                    <h3>Browse Channels</h3>
-                    {/* <p>Channels you can join</p> */}
-                </div>
-                <div className="pub-list-container">
-                    <ul className="pub-ul">
-                        {pubChannels}
-                    </ul>
+                
+                <div className="add-inner-container">
+                    <div className="add-top-container">
+                        <div className="invis-thing">
+                        </div>
+                        <div className="add-channel-top">
+                            <h3 className="add-browse">Browse Channels</h3>
+                            {/* <p>Channels you can join</p> */}
+                        </div>
+                        <div>
+                            <img
+                                className="x-button"
+                                src="https://image.flaticon.com/icons/svg/2089/2089650.svg"
+                                width="25"
+                                height="25"
+                                onClick={this.exitBrowse.bind(this)}
+                            />
+                        </div>
+                    </div>
+                    <div className="pub-list-container">
+                        <p className="add-blurb">Channels you can join</p>
+                        <ul className="pub-ul">
+                            {pubChannels}
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
