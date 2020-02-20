@@ -7,6 +7,7 @@ const MessageItem = (props) => {
     } else {
         author = props.message.author_name
     }
+    
     const time = date => {
         const obj = new Date(date);
         const fullHours = obj.getHours();

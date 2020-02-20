@@ -6,35 +6,35 @@ class Filler extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchCurrentUser(this.props.currentUserId)
-        let firstChannel;
+    // componentDidMount() {
+    //     this.props.fetchCurrentUser(this.props.currentUserId)
+    //     let firstChannel;
         
-        if (this.props.currentUser) {
-            firstChannel = this.props.currentUser.channel_ids[0];
-        }
+    //     if (this.props.currentUser) {
+    //         firstChannel = this.props.currentUser.channel_ids[0];
+    //     }
 
 
-        if (firstChannel) {
-            this.props.history.push(`/home/channels/${firstChannel}`)
-        }
+    //     if (firstChannel) {
+    //         this.props.history.push(`/home/channels/${firstChannel}`)
+    //     }
 
-    }
+    // }
 
-    componentDidUpdate(prevProps) {
-        if (!prevProps.currentUser || this.props.currentUser) {
-            const firstChannel = this.props.currentUser.channel_ids[0];
-            if (firstChannel) {
-                this.props.history.push(`/home/channels/${firstChannel}`)
-            }
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (!prevProps.currentUser || this.props.currentUser) {
+    //         const firstChannel = this.props.currentUser.channel_ids[0];
+    //         if (firstChannel) {
+    //             this.props.history.push(`/home/channels/${firstChannel}`)
+    //         }
+    //     }
+    // }
 
     render() {
         return (
             <div className="filler">
                 <div>
-                    <h2 className="oops">
+                    {/* <h2 className="oops">
                         Oops! Looks like you aren't a 
                         member of any channels. 
                         <Link 
@@ -42,7 +42,7 @@ class Filler extends React.Component {
                             to="/home/channels">
                             Join a channel!
                         </Link>
-                    </h2>
+                    </h2> */}
                 </div>
             </div>
         )

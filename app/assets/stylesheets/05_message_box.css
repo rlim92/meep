@@ -191,6 +191,8 @@
 .input.message:focus {
     /* border-color: rgba(var(--sk_foreground_max,29,28,29),.7); */
     outline: 0;
+    border: 1px solid rgba(232, 232, 232, 0.5);
+    /* border */
 }
 
 .channel-top-info {
