@@ -1,11 +1,13 @@
 .channel-name {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     font-weight: 900;
     margin-bottom: 0px;
-    margin-top: 14px;
+    /* margin-top: 14px; */
     color: #D1D2D3;
+    margin-top: 10px;
+    margin-left: 21px;
 }
 /* 
 .modal-background {
@@ -222,11 +224,56 @@
     justify-content: left;
 }
 
-.member-icon {
-    margin-left: 38px;
+.little-ch-icons {
+    display: flex;
+}
+
+.star {
+    filter: invert(100%) sepia(5%) saturate(570%) hue-rotate(175deg) brightness(89%) contrast(85%);
+    margin-left: 20px;
     padding-right: 2px;
     margin-top: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 9px;
+    color: #D1D2D3;
+    cursor: pointer;
+}
+
+.star:hover {
+    filter: invert(82%) sepia(99%) saturate(1437%) hue-rotate(322deg) brightness(101%) contrast(90%);
+}
+
+.pipe {
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: #55575a;
+    margin-top: 2px;
+    padding-left: 4px;
+    padding-right: 6px;
+}
+
+.ch-hashtag {
+    padding-right: 2px;
+}
+
+.member-list {
+    cursor: pointer;
+}
+
+.member-list:hover .member-icon {
+    filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%);
+}
+
+.member-list:hover .member-count {
+    color: #1d9bd1;
+}
+
+.member-icon {
+    filter: invert(100%) sepia(5%) saturate(570%) hue-rotate(175deg) brightness(89%) contrast(85%);
+    margin-left: 0px;
+    padding-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 9px;
     color: #D1D2D3;
 }
 
@@ -239,7 +286,7 @@
     font-family: Lato, sans-serif;
     font-weight: 300;
     font-size: 13px;
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 }
 
 .hidden {
