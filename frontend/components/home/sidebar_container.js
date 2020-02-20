@@ -3,7 +3,7 @@ import Sidebar from './sidebar';
 import { logout, fetchCurrentUser } from '../../actions/session_actions';
 import { fetchUserChannels } from '../../util/channels_api_util';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     // debugger
     return {
         user: state.entities.users[state.session.id],

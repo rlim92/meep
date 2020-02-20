@@ -90,9 +90,9 @@
     font-family: 'Lato', sans-serif;
     /* font-size: 15px; */
     line-height: 1.46668;
-    padding-left: 40px;
+    padding-left: 20px;
     margin-bottom: 0px;
-    padding-bottom: 4px;
+    /* padding-bottom: 4px; */
 }
 
 
@@ -117,7 +117,8 @@
 }
 
 .message-msg {
-    margin-top: 3px;
+    margin-top: 0px;
+    font-size: 15px;
     font-weight: 300;
     margin-bottom: 0px;
     color: rgb(188, 221, 222);
@@ -146,7 +147,8 @@
     width: 84.6vw;
     border-top: 1px solid #34363b;
     margin-bottom: 0px;
-    margin-bottom: 3px;
+    /* margin-bottom: 3px; */
+    padding-bottom: 3px;
     margin-left: 0px;
     padding-left: 0px;
 }

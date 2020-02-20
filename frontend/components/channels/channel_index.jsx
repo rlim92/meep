@@ -15,11 +15,17 @@ class ChannelIndex extends React.Component {
 
     render() {
         // debugger
+        let currentChId;
+        if (this.props.match) {
+            // debugger
+            currentChId = this.props.match.params.channelId
+        }
         const channelItemLis = Object.values(this.props.channels).map( ch => {
             return (
                 <ChannelIndexItem 
                     key={[ch.id, ch.id]}
                     channel={ch}
+                    currentChId={currentChId}
                 />
             )
         })
@@ -36,9 +42,11 @@ class ChannelIndex extends React.Component {
                     {channelItemLis}
                     <li>
                     </li>
-                    <li className="channel-li add-ch">
-                        <Link to="/home/channels">+ Add a channel</Link>
-                    </li>
+                    <Link to="/home/channels">
+                        <li className="channel-li add-ch">
+                            <span className="hashtag">+</span> Add a channel
+                        </li>
+                    </Link>
                 </ul>
             </div>
         );

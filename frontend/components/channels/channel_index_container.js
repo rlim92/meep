@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ChannelIndex from './channel_index';
 import { fetchUserChannels } from '../../actions/channel_actions';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     // debugger;
     return {
         currentUser: state.entities.users[state.session.id],
