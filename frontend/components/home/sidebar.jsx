@@ -1,6 +1,7 @@
 import React from 'react';
 import ChannelIndex from '../channels/channel_index_container';
-import { Link } from 'react-router-dom';
+import DmIndex from '../dms/dm_index_container';
+// import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
     constructor(props) {
@@ -109,6 +110,7 @@ class SideBar extends React.Component {
                 </div>
                 <div className="ch-dm-container">
                     <ChannelIndex />
+                    <DmIndex currentUserId={this.props.currentUserId}/>
                 </div>
             </div>
         );     

@@ -10,7 +10,7 @@ export default (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return merge({}, state, {[action.user.id]: action.user});
         case RECEIVE_SOME_USERS:
-            return action.members;
+            return merge({}, state, action.members);
         case REMOVE_CHANNEL:
             newState = merge({}, state);
             newState[action.userId].channel_ids = newState[action.userId].channel_ids.filter(id => id !== action.channelId);

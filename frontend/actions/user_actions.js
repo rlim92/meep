@@ -25,3 +25,24 @@ export const fetchChannelMembers = (channelId) => {
         );
     };
 };
+
+export const fetchDmMembers = (dmId) => {
+    return (dispatch) => {
+        return APIUtil.fetchDmMembers(dmId).then(
+            (messages) => { dispatch(receiveSomeUsers(messages)) },
+            (errors) => { dispatch(receiveUserErrors(errors)) }
+        );
+    };
+};
+
+export const fetchUserDmMembers = (userId) => {
+    return (dispatch) => {
+        return APIUtil.fetchUserDmMembers(userId).then(
+            (members) => { 
+                // debugger;
+                dispatch(receiveSomeUsers(members)) 
+            },
+            (errors) => { dispatch(receiveUserErrors(errors)) }
+        );
+    };
+};

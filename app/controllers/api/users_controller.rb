@@ -11,15 +11,22 @@ class Api::UsersController < ApplicationController
     end
 
     def index
+        # debugger
         if params[:channelId]
             ch_id = params[:channelId].to_i
             @users = Channel.find(ch_id).members.includes(:channels, :direct_messages)
         elsif params[:dmId]
             dm_id = params[:dmId].to_i
-            @users = DirectMessage.find(dm_id).members.all
+            # debugger
+            @users = DirectMessage.find(dm_id).members.includes(:channels, :direct_messages)
+        elsif params[:userDmId]
+            user_id = params[:userDmId]
+            @dm_members = User.find(user_id).direct_messages.includes(:members)
         end
         if @users
             render :index
+        elsif @dm_members
+            render :members
         else
             render json: @users.errors.full_messages, status: 420
         end

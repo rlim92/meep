@@ -1,0 +1,1 @@
+json.partial! "api/direct_messages/direct_messages", dm: @dm

@@ -6,7 +6,18 @@ export const fetchChannelMembers = (channelId) => {
     });
 };
 
+export const fetchUserDmMembers = (userId) => {
+    // debugger
+    return $.ajax({
+        method: "GET",
+        url: `api/users`,
+        data: { userDmId }
+    });
+};
+
+
 export const fetchDmMembers = (dmId) => {
+    // debugger
     return $.ajax({
         method: "GET",
         url: `api/users`,

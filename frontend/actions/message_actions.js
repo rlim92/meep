@@ -34,6 +34,15 @@ export const fetchChannelMessages = (channelId) => {
     };
 };
 
+export const fetchDmMessages = (dmId) => {
+    return (dispatch) => {
+        return APIUtil.fetchDmMessages(dmId).then(
+            (messages) => { dispatch(receiveSomeMessages(messages)) },
+            (errors) => { dispatch(receiveMessageErrors(errors)) }
+        );
+    };
+};
+
 // export const createMessage = (message) => {
 //     return (dispatch) => {
 //         return APIUtil.createMessage(message).then(

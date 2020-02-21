@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Sidebar from './sidebar';
 import { logout, fetchCurrentUser } from '../../actions/session_actions';
 import { fetchUserChannels } from '../../util/channels_api_util';
+import { fetchUserDmMembers } from '../../util/user_api_util';
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -14,7 +15,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     return {
         logout: () => dispatch(logout()),
-        fetchUserChannels: (id) => dispatch(fetchUserChannels(id))
+        fetchUserChannels: (id) => dispatch(fetchUserChannels(id)),
+        fetchUserDmMembers: (id) => dispatch(fetchUserDmMembers(id))
     }
 }
 

@@ -6,7 +6,7 @@ class DirectMessage < ApplicationRecord
     
     has_many :members,
         through: :memberships,
-        source: :members
+        source: :member
     
     has_many :messages, 
         as: :messageable

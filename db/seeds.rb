@@ -26,7 +26,9 @@ food = Channel.create!(name: 'food', description: 'best foods', is_private: fals
 
 
 rich_dm = DirectMessage.create!(is_team: false)
+# rich_dm.member_ids = [demo.id, rich.id]
 paul_dm = DirectMessage.create!(is_team: false)
+# paul_dm
 kai_dm = DirectMessage.create!(is_team: false)
 
 
