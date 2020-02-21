@@ -21,12 +21,12 @@ class ChannelForm extends React.Component {
         e.preventDefault();
 
         this.props.action(this.state).then(
-            () => this.props.history.push('/home')
+            () => this.props.history.push(`/home/`)
         );
     };
 
     handleClick(e) {
-        if (e.target.checked) {
+        if (e.target.checked && !this.state.is_private) {
             this.setState({ is_private: true })
         };
     };

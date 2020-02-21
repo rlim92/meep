@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
     def index
         if params[:channelId]
             ch_id = params[:channelId].to_i
-            @users = Channel.find(ch_id).members.all
+            @users = Channel.find(ch_id).members.includes(:channels, :direct_messages)
         elsif params[:dmId]
             dm_id = params[:dmId].to_i
             @users = DirectMessage.find(dm_id).members.all
@@ -27,7 +27,7 @@ class Api::UsersController < ApplicationController
 
     def show
         # debugger
-        @user = User.find(params[:id])
+        @user = User.find(params[:id]).includes(:channels, :direct_messages)
         render :show
     end
 

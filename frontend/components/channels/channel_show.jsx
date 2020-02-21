@@ -18,7 +18,8 @@ class ChannelShow extends React.Component {
         }
 
         App.currentChannel = App.cable.subscriptions.create(
-            { channel: "ChatChannel", 
+            { 
+                channel: "ChatChannel", 
                 id: this.props.match.params.channelId,
                 authorId: this.props.currentUserId
             },
@@ -82,26 +83,32 @@ class ChannelShow extends React.Component {
         );
     };
 
-    coggle() {
+    coggle(e) {
+        e.stopPropagation();
+
         const cogList = document.getElementsByClassName('cog-list')[0];
-        const outerDiv = document.getElementsByClassName('outer-modal-close')[0];
+        const outerDiv = document.getElementsByClassName('outer-layer-dropdown')[0];
         
         if (cogList.classList.contains('active')) {
             cogList.classList.remove('active');
+            outerDiv.classList.remove('active');
         } else {
             cogList.classList.add('active');
+            outerDiv.classList.add('active');
         }
     };
 
-    // closeCog() {
-    //     const cogList = document.getElementsByClassName('cog-list')[0];
-    //     const outerDiv = document.getElementsByClassName('outer-modal-close')[0];
+    closeCog(e) {
+        e.stopPropagation();
 
-    //     if (cogList.classList.contains('active') && outerDiv.classList.contains('active')) {
-    //         cogList.classList.remove('active');
-    //         outerDiv.classList.remove('active');
-    //     }
-    // }
+        const cogList = document.getElementsByClassName('cog-list')[0];
+        const outerDiv = document.getElementsByClassName('outer-layer-dropdown')[0];
+
+        if (cogList.classList.contains('active') && outerDiv.classList.contains('active')) {
+            cogList.classList.remove('active');
+            outerDiv.classList.remove('active');
+        }
+    }
 
     deleteChannel() {
         this.props.destroyChannel(this.props.channel.id).then(
@@ -160,6 +167,7 @@ class ChannelShow extends React.Component {
                         </div>
                         <div className="channel-top left">
                             {/* <div className="outer-modal-close" onClick={this.closeCog.bind(this)}> */}
+                            <div className="outer-layer-dropdown" onClick={this.closeCog.bind(this)}>
                                 <div className="cog-list"> 
                                     <div className="cog-ul">
                                         <li
@@ -170,8 +178,8 @@ class ChannelShow extends React.Component {
                                         {adminOptions}   
                                     </div>
                                 </div>
-                                <img className="cog" onClick={this.coggle.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
-                            {/* </div> */}
+                            </div>
+                            <img className="cog" onClick={this.coggle.bind(this)} src="https://image.flaticon.com/icons/svg/2099/2099058.svg" width="20" />
                         </div>
                     </div>
                     <ul className="chatlog-ul">

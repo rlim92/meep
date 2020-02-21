@@ -7,14 +7,32 @@ class SideBar extends React.Component {
         super(props);
     }
 
-    loggle() {
+    loggle(e) {
+        e.stopPropagation();
+
         const profList = document.getElementsByClassName('prof-list')[0];
+        const outerDiv = document.getElementsByClassName('outer-log-dropdown')[0];
+
         if (profList.classList.contains('active')) {
             profList.classList.remove('active');
+            outerDiv.classList.remove('active');
         } else {
             profList.classList.add('active');
+            outerDiv.classList.add('active');
         }
     };
+
+    closeLog(e) {
+        e.stopPropagation();
+
+        const profList = document.getElementsByClassName('prof-list')[0];
+        const outerDiv = document.getElementsByClassName('outer-log-dropdown')[0];
+
+        if (cogList.classList.contains('active') && outerDiv.classList.contains('active')) {
+            profList.classList.remove('active');
+            outerDiv.classList.remove('active');
+        }
+    }
 
     render() {
         let name;
@@ -25,32 +43,40 @@ class SideBar extends React.Component {
             <div className="home-container sidebar">
                 <div className="home-top" onClick={this.loggle.bind(this)}>
                     <h1 className="workplace">
-                        <Link className="logo" to="/home">
+                        <div className="logo">
                             <img src="https://image.flaticon.com/icons/svg/2111/2111615.svg" width="14"/>
                             <span className="red"><strong>m</strong></span>
                             <span className="blue"><strong>e</strong></span>
                             <span className="yellow"><strong>e</strong></span>
                             <span className="green"><strong>p</strong></span>
-                        </Link>
+                        </div>
                     </h1>
-                    <div className="prof-list">
-                        <div className="cog-ul">
-                            <li
-                                className="cog-li leave">
-                                Set a Status
-                            </li>
-                            <li
-                                className="cog-li leave">
-                                Profile and Account
-                            </li>
-                            <li
-                                className="cog-li leave"
-                                onClick={this.props.logout}>
-                                Logout
-                            </li>
+                    <div className="outer-log-dropdown">
+                        <div className="prof-list">
+                            <div className="cog-ul">
+                                <li
+                                    className="cog-li leave">
+                                    Set a Status
+                                </li>
+                                <li
+                                    className="cog-li leave">
+                                    Profile and Account
+                                </li>
+                                <li
+                                    className="cog-li leave"
+                                    onClick={this.props.logout}>
+                                    Logout
+                                </li>
+                            </div>
                         </div>
                     </div>
                     <div className="sidebar-username-container">
+                        <img 
+                            className="online"
+                            src={window.greenOnline}
+                            // width="12"
+                            // height="10"
+                        />
                         <p className="sidebar-username">
                             {name}
                         </p>
@@ -81,7 +107,9 @@ class SideBar extends React.Component {
                         />
                     </a>
                 </div>
-                <ChannelIndex />
+                <div className="ch-dm-container">
+                    <ChannelIndex />
+                </div>
             </div>
         );     
     }

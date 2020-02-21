@@ -13,8 +13,6 @@ class PubChItem extends React.Component {
         addChMember(currentUserId, channel.id).then(
             () => fetchChannel(channel.id)
         ).then(
-            () => fetchCurrentUser(currentUserId)
-        ).then(
             () => this.props.history.push(`/home/channels/${channel.id}`)
         );
     };
