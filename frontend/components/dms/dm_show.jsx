@@ -118,7 +118,7 @@ class DmShow extends React.Component {
 
     render() {
         let chatlog;
-        let name;
+        let name = "DM";
         let memberCount = 0;
         let adminOptions;
         let users;
@@ -131,7 +131,7 @@ class DmShow extends React.Component {
 
         if (this.props.dm && this.props.dm.id == this.props.match.params.dmId) {
 
-            let name = "Direct Message";
+            // let name = "Direct Message";
             for (let i = 0; i < this.props.dm.member_ids.length; i++) {
                 if (this.props.dm.member_ids[i] !== this.props.currentUserId && this.props.users && this.props.users[this.props.dm.member_ids[i]]) {
                     // debugger

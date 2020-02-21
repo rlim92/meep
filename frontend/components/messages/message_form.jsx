@@ -30,7 +30,7 @@ class MessageForm extends React.Component {
     };
 
     render() {
-        let name = "";
+        let name = "user";
 
         if (this.props.channel) {
             name = `#${this.props.channel.name}`;
