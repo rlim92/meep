@@ -166,7 +166,7 @@
 .chatlog-ul {
     margin-top: 0px;
     overflow-y: scroll;
-    height: 74vh;
+    height: calc(100vh - 174px);
     /* width: 84.6vw; */
     width: calc( 100vw - 220px);
     border-top: 1px solid #3b3c41;
@@ -188,13 +188,15 @@
 
 .message-form-container {
     margin-top: 0px;
-    /* width: calc( 100vw - 220px ); */
+    width: calc( 100vw - 220px );
+    /* height: calc(26vh - 64px); */
 }
 
 .input.message {
     /* width: 91%; */
     /* width: calc( 92.5vw - 220px ); */
     width: calc(109% - 220px);
+    /* width: calc(91%); */
     color: #D1D2D3;
     background-color: rgba(232,232,232,0.04);
     margin-left: 20px;
