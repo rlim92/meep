@@ -32,11 +32,12 @@ paul_dm = DirectMessage.create!(is_team: false)
 kai_dm = DirectMessage.create!(is_team: false)
 
 
-team_dm = DirectMessage.create!(is_team: true)
+meep.messages.create!(text: 'welcome to meeptown', author_id: rich.id)
+rich_dm.messages.create!(text: 'hello!!!!!', author_id: rich.id)
 
+paul_dm.messages.create!(text: 'me paul!!!', author_id: paul.id)
 
-meep.messages.create!(text: 'welcome to meeptown', author_id: demo.id)
-rich_dm.messages.create!(text: 'hello!!!!!', author_id: demo.id)
+kai_dm.messages.create!(text: 'hi!!!!!', author_id: kai.id)
 
 
 meep.memberships.create!(member_id: demo.id)
@@ -63,8 +64,3 @@ paul_dm.memberships.create!(member_id: demo.id)
 
 kai_dm.memberships.create!(member_id: demo.id)
 kai_dm.memberships.create!(member_id: kai.id)
-
-team_dm.memberships.create!(member_id: demo.id)
-team_dm.memberships.create!(member_id: rich.id)
-team_dm.memberships.create!(member_id: paul.id)
-team_dm.memberships.create!(member_id: kai.id)
