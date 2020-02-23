@@ -13,14 +13,14 @@ class ChannelShow extends React.Component {
     };
 
     createLiveConnection() {
-        if (App.currentChannel) {
-            App.currentChannel.unsubscribe();
-        }
+        // if (App.currentChannel) {
+        //     App.currentChannel.unsubscribe();
+        // }
 
         App.currentChannel = App.cable.subscriptions.create(
             { 
                 channel: "ChatChannel", 
-                id: this.props.match.params.channelId,
+                id: parseInt(this.props.match.params.channelId),
                 authorId: this.props.currentUserId
             },
             {
@@ -70,10 +70,19 @@ class ChannelShow extends React.Component {
                 this.props.fetchChannelMessages(this.props.match.params.channelId)
             )
         }
+        // this.createLiveConnection();
     };
 
     componentWillUnmount() {
-        App.currentChannel.unsubscribe();
+        // debugger;
+        const currentCh = document.getElementById(this.props.match.params.channelId);
+        if (currentCh && currentCh.classList.contains('current')) {
+            currentCh.classList.remove('current');
+        }
+
+        // if (App.currentChannel) {
+        //     App.currentChannel.unsubscribe();
+        // }
     }
 
     leaveChannel() {
@@ -121,6 +130,7 @@ class ChannelShow extends React.Component {
         let name;
         let memberCount = 0;
         let adminOptions;
+        let publicAdd;
 
         const currentCh = document.getElementById(this.props.match.params.channelId);
         if (currentCh && !currentCh.classList.contains('current')) {
@@ -131,6 +141,17 @@ class ChannelShow extends React.Component {
 
             name = this.props.channel.name;
             memberCount = this.props.channel.member_ids.length
+
+            if (!this.props.channel.is_private || this.props.channel.admin_id === this.props.currentUserId) {
+                publicAdd = (
+                    <li
+                        className="cog-li add"
+                    // onClick={this.deleteChannel.bind(this)}
+                    >
+                        Add people to channel
+                    </li>
+                )
+            }
 
             if (this.props.channel.admin_id === this.props.currentUserId) {
                 adminOptions = (
@@ -170,6 +191,7 @@ class ChannelShow extends React.Component {
                             <div className="outer-layer-dropdown" onClick={this.closeCog.bind(this)}>
                                 <div className="cog-list"> 
                                     <div className="cog-ul">
+                                        {publicAdd}
                                         <li
                                             className="cog-li leave"
                                             onClick={this.leaveChannel.bind(this)}>
@@ -188,7 +210,11 @@ class ChannelShow extends React.Component {
                     </ul>
                 </div>
                 <div className="message-form-outer-container">
-                    <MessageForm channel={this.props.channel} />
+                    <MessageForm 
+                        channel={this.props.channel} 
+                        currentUserId={this.props.currentUserId}
+                        receiveMessage={this.props.receiveMessage}
+                    />
                 </div>
             </div>
         );

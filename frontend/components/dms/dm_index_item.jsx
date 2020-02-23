@@ -31,7 +31,7 @@ class DmIndexItem extends React.Component {
 
         return (
             <Link to={`/home/dms/${this.props.dm.id}`}>
-                <li className="channel-li">
+                <li id={`dm-${this.props.dm.id}`} className="channel-li">
                 <span className="hashtag">{this.props.dm.member_ids.length}</span>
                     {/* Name */}
                     {this.props.otherMemberName}

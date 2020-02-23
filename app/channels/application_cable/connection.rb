@@ -7,9 +7,12 @@ module ApplicationCable
       reject_unauthorized_connection unless self.current_user
     end
 
+    def disconnect
+      self.current_user = nil
+    end
+
     private
     def find_verified_user
-      # debugger
       verified_user = User.find_by(session_token: request.session.fetch('session_token', nil))
     end
   end

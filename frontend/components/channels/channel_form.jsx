@@ -32,7 +32,10 @@ class ChannelForm extends React.Component {
     };
 
     exitForm(e) {
-        this.props.history.push('/home');
+        // debugger;
+        // console.log("")
+        // this.props.history.goBack();
+        this.props.history.push(`/home/`);
     };
 
     render() {

@@ -6,7 +6,7 @@ export const fetchChannelMembers = (channelId) => {
     });
 };
 
-export const fetchUserDmMembers = (userId) => {
+export const fetchUserDmMembers = (userDmId) => {
     // debugger
     return $.ajax({
         method: "GET",

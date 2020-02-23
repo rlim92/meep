@@ -6,7 +6,7 @@ class MessageForm extends React.Component {
         this.state = { text: "" };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleKeyUp = this.handleKeyUp.bind(this);
+        // this.handleKeyUp = this.handleKeyUp.bind(this);
     }
 
     update(field) {
@@ -16,25 +16,68 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
+        // if (!App.currentChannel) {
+        //     App.currentChannel = App.cable.subscriptions.create(
+        //         {
+        //             channel: "ChatChannel",
+        //             id: parseInt(this.props.channel.id),
+        //             authorId: this.props.currentUserId
+        //         },
+        //         {
+        //             received: data => {
+        //                 switch (data.type) {
+        //                     case 'message':
+        //                         this.props.receiveMessage(JSON.parse(data.message));
+        //                         break;
+        //                 }
+        //             },
+        //             speak: function (data) { return this.perform('speak', data) },
+        //             load: function () { return this.perform('load') }
+        //         }
+        //     );
+        // } 
+        // else {
+        //     // App.currentChannel.unsubscribe();
+            
+        //     App.currentChannel = App.cable.subscriptions.create(
+        //         {
+        //             channel: "ChatChannel",
+        //             id: parseInt(this.props.channel.id),
+        //             authorId: this.props.currentUserId
+        //         },
+        //         {
+        //             received: data => {
+        //                 switch (data.type) {
+        //                     case 'message':
+        //                         this.props.receiveMessage(JSON.parse(data.message));
+        //                         break;
+        //                 }
+        //             },
+        //             speak: function (data) { return this.perform('speak', data) },
+        //             load: function () { return this.perform('load') }
+        //         }
+        //     );
+        // }
         App.currentChannel.speak({ message: this.state.text })
             // .then( );
         this.setState({ text: "" });
     }
 
-    handleKeyUp(e) {
-        if (e.keyCode == 13) {
-            App.currentChannel.speak({message: this.state.text});
-            this.setState({ text: "" });
-        };
-    };
+    // handleKeyUp(e) {
+    //     if (e.keyCode == 13) {
+    //         App.currentChannel.speak({message: this.state.text});
+    //         this.setState({ text: "" });
+    //     };
+    // };
 
     render() {
-        let name = "user";
+        let name = "";
 
         if (this.props.channel) {
             name = `#${this.props.channel.name}`;
-        } 
+        } else if (this.props.dm && this.props.name !== "") {
+            name = this.props.name;
+        }
 
         return (
             <div className="message-form-container">
@@ -44,7 +87,7 @@ class MessageForm extends React.Component {
                         type="text"
                         value={this.state.text}
                         onChange={this.update("text")}
-                        onKeyUp={this.onKeyUp}
+                        // onKeyUp={this.handleKeyUp}
                         placeholder={`Message ${name}`}
                     />
                     {/* <button>Send</button> */}

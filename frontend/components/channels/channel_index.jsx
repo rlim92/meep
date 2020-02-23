@@ -33,7 +33,7 @@ class ChannelIndex extends React.Component {
         return (
             <div className="channels-index">
                 <div className="title-and-create">
-                    <Link className="title-browse" to="/home/channels">
+                    <Link className="title-browse" to="/home/channels/">
                         <h3 className="channels-header">Channels</h3>
                     </Link>
                     <Link className="create-link" to="/home/channels/create">
@@ -44,7 +44,7 @@ class ChannelIndex extends React.Component {
                     {channelItemLis}
                     <li>
                     </li>
-                    <Link to="/home/channels">
+                    <Link to="/home/channels/">
                         <li className="channel-li add-ch">
                             <span className="hashtag">+</span> Add a channel
                         </li>

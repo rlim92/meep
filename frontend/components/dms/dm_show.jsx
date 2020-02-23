@@ -55,11 +55,12 @@ class DmShow extends React.Component {
             if (App.currentChannel) {
                 App.currentChannel.unsubscribe();
             }
-
+            // debugger;
             if (prevProps.dm) {
-                const prevCh = document.getElementById(prevProps.dm.id);
-                if (prevCh && prevCh.classList.contains('current')) {
-                    prevCh.classList.remove('current');
+                // debugger
+                const currentDm = document.getElementById(`dm-${prevProps.dm.id}`);
+                if (currentDm && currentDm.classList.contains('current')) {
+                    currentDm.classList.remove('current');
                 }
             }
 
@@ -70,10 +71,16 @@ class DmShow extends React.Component {
                 this.props.fetchDmMessages(this.props.match.params.dmId)
             )
         }
+
+        // this.createLiveConnection();
     };
 
     componentWillUnmount() {
-        App.currentChannel.unsubscribe();
+        // debugger;
+        const currentDm = document.getElementById(`dm-${this.props.match.params.dmId}`);
+        if (currentDm && currentDm.classList.contains('current')) {
+            currentDm.classList.remove('current');
+        }
     }
 
     // leaveChannel() {
@@ -118,27 +125,27 @@ class DmShow extends React.Component {
 
     render() {
         let chatlog;
-        let name = "DM";
+        let name = [];
         let memberCount = 0;
         let adminOptions;
-        let users;
+        // let users;
 
 
-        // const currentCh = document.getElementById(this.props.match.params.channelId);
-        // if (currentCh && !currentCh.classList.contains('current')) {
-        //     currentCh.classList.add('current');
-        // }
+        const currentDm = document.getElementById(`dm-${this.props.match.params.dmId}`);
+        if (currentDm && !currentDm.classList.contains('current')) {
+            currentDm.classList.add('current');
+        }
 
         if (this.props.dm && this.props.dm.id == this.props.match.params.dmId) {
 
-            // let name = "Direct Message";
-            for (let i = 0; i < this.props.dm.member_ids.length; i++) {
-                if (this.props.dm.member_ids[i] !== this.props.currentUserId && this.props.users && this.props.users[this.props.dm.member_ids[i]]) {
-                    // debugger
-                    name = this.props.users[this.props.dm.member_ids[i]].username;
-                    break;
+            if (this.props.users) {
+                for (let i = 0; i < this.props.dm.member_ids.length; i++) {
+                    if (this.props.dm.member_ids[i] !== this.props.currentUserId) {
+                        name.push(this.props.users[this.props.dm.member_ids[i]].username)
+                    }
                 }
             }
+
             memberCount = this.props.dm.member_ids.length
 
             // if (this.props.dm.admin_id === this.props.currentUserId) {
@@ -164,7 +171,7 @@ class DmShow extends React.Component {
                 <div className="chatlog channel">
                     <div className="channel-top-info">
                         <div className="channel-top right">
-                            <p className="channel-name"><strong><span className="ch-hashtag"></span>{name}</strong></p>
+                            <p className="channel-name"><strong><span className="ch-hashtag"></span>{name.join(", ")}</strong></p>
                             <div className="little-ch-icons">
                                 <img className="star" src="https://image.flaticon.com/icons/svg/2107/2107992.svg" width="12" />
                                 <span className="pipe">|</span>
@@ -180,10 +187,10 @@ class DmShow extends React.Component {
                                 <div className="cog-list">
                                     <div className="cog-ul">
                                         <li
-                                            className="cog-li leave"
+                                            className="cog-li add-to-ch"
                                             // onClick={this.leaveChannel.bind(this)}
-                                            >
-                                            Leave #{name}
+                                        >
+                                            Add {name} to a channel...
                                         </li>
                                         {adminOptions}
                                     </div>
@@ -198,7 +205,7 @@ class DmShow extends React.Component {
                     </ul>
                 </div>
                 <div className="message-form-outer-container">
-                    <MessageForm dm={this.props.dm} />
+                    <MessageForm dm={this.props.dm} name={name.join(", ")} />
                 </div>
             </div>
         );

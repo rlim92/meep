@@ -11,6 +11,7 @@ class ChatChannel < ApplicationCable::Channel
     # debugger
     message = @chat_channel.messages.new(text: data['message'])
     # debugger
+    # message.author_id = current_user.id
     message.author_id = @author_id
     if message.save!
       # debugger

@@ -6,6 +6,7 @@ import Splash from '../components/splash/splash_container';
 import Home from '../components/home/home';
 import CreateChannelForm from './channels/create_channel_form_container';
 import PublicChannelIndex from './channels/public_channel_index_container';
+import CreateDmForm from './dms/create_dm_form_container';
 import { Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/rout_utils';
 
@@ -20,6 +21,7 @@ const App = () => {
                 <AuthRoute path="/login" component={Login} />
                 <ProtectedRoute path='/home/channels/create' component={CreateChannelForm} />
                 <ProtectedRoute exact path='/home/channels/' component={PublicChannelIndex} />
+                <ProtectedRoute path='/home/dms/create' component={CreateDmForm} />
                 <ProtectedRoute path="/home" component={Home} />
                 <AuthRoute exact path="/" component={Splash} />
             </Switch>

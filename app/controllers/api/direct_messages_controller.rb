@@ -34,6 +34,7 @@ class Api::DirectMessagesController < ApplicationController
     def show
         @dm = DirectMessage.find(params[:id])
         if @dm
+            @dm.member_ids -= [@current_user.id]
             render :show
         else
             render json: @dm.errors.full_messages, status: 420

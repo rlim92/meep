@@ -1,5 +1,6 @@
 class DmChannel < ApplicationCable::Channel
   def subscribed
+    # debugger
     @dm_channel = DirectMessage.find(params[:id])
 
     @author_id = params[:authorId].to_i

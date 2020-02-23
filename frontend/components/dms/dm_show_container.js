@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
     return {
         dm: state.entities.dms[ownProps.match.params.dmId],
         messages: state.entities.messages,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        users: state.entities.users
     };
 };
 

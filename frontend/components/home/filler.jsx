@@ -35,7 +35,7 @@ class Filler extends React.Component {
         return (
             <div className="filler">
                 <div>
-                    {/* <h2 className="oops">
+                    <h2 className="oops">
                         Oops! Looks like you aren't a 
                         member of any channels. 
                         <Link 
@@ -43,7 +43,8 @@ class Filler extends React.Component {
                             to="/home/channels">
                             Join a channel!
                         </Link>
-                    </h2> */}
+                    </h2>
+                    <img src="https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/Blog_Hipchat_to_Slack.png"/>
                 </div>
             </div>
         )

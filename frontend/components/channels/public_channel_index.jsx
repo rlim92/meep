@@ -20,7 +20,9 @@ class PublicChannelIndex extends React.Component {
     // }
 
     exitBrowse(e) {
-        this.props.history.push('/home')
+        // debugger;
+        // console.log(this.props);
+        this.props.history.push('/home');
     }
 
     render() {

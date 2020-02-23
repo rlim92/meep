@@ -89,6 +89,7 @@
     margin:0px;
     padding-top: 5px;
     padding-bottom: 5px;
+    /* z-index: 2; */
 }
 
 .home-top:hover {
@@ -114,7 +115,8 @@
     right: 0;
     left: 0;
     display: none;
-    /* z-index: 0; */
+    /* z-index: 1; */
+    /* cursor: default; */
 }
 
 .fake-search {
