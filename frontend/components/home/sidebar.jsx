@@ -144,7 +144,7 @@ class SideBar extends React.Component {
                     <div className="sidebar-username-container">
                         <img 
                             className="online"
-                            src={window.greenOnline}
+                            src='https://image.flaticon.com/icons/svg/319/319873.svg'
                             // width="12"
                             // height="10"
                         />
