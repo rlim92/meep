@@ -147,6 +147,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-decoration: none;
 }
 
 .channels-header {
@@ -159,10 +160,11 @@
     margin-bottom: 2px;
     font-weight: 600;
     /* width: 50%; */
+    text-decoration: none;
 }
 
-.create-link {
-    margin-top: 18px;
+/* .create-link { */
+    /* margin-top: 18px; */
     /* color: white; */
     /* content: "\E228"; */
     /* font-family: Slack v2;
@@ -177,17 +179,28 @@
     line-height: 1;
     content: "\E228";
     transition: opacity .1s ease-out; */
-}
+/* } */
 
 .create-button {
+    margin-top: 14px;
     filter: invert(0.7);
     padding-right: 12px;
     /* padding-top: 2px; */
 }
 
+
 .create-button:hover {
     filter: invert(1);
 }
+
+.dm-button-thing {
+    margin-bottom: 4px;
+}
+.dms-create-link {
+    text-decoration: none;
+}
+
+
 
 .channels-ul {
     font-family: Lato, sans-serif;
@@ -225,13 +238,19 @@
 .channel-li:hover {
     background-color: #443642;
     /* background-color: #9a9c9e; */
-    color: whitesmoke;
+    /* color: whitesmoke; */
     /* transition: 0.5s; */
 }
 
 .current {
-    background-color: #1064a3 !important;
-    color: #FFFFFF !important;
+    /* background-color: #1064a3 !important; */
+    background-color: rgb(91, 65, 91);
+    color: #FFFFFF;
+}
+
+.current:hover {
+    background-color: rgb(91, 65, 91);
+    color: #FFFFFF;
 }
 
 .hashtag {

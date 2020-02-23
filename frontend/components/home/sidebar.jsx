@@ -1,7 +1,7 @@
 import React from 'react';
 import ChannelIndex from '../channels/channel_index_container';
 import DmIndex from '../dms/dm_index_container';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
     constructor(props) {
@@ -35,6 +35,45 @@ class SideBar extends React.Component {
         }
     }
 
+    // goColors() {
+
+    // }
+
+    red() {
+        const root = document.getElementsByClassName('home-outer')[0];
+        if (root.id !== 'red-theme') {
+            root.id = 'red-theme';
+        }
+    }
+
+    blue() {
+        const root = document.getElementsByClassName('home-outer')[0];
+        if (root.id !== 'blue-theme') {
+            root.id = 'blue-theme';
+        }
+    }
+
+    yellow() {
+        const root = document.getElementsByClassName('home-outer')[0];
+        if (root.id !== 'yellow-theme') {
+            root.id = 'yellow-theme';
+        }
+    }
+
+    green() {
+        const root = document.getElementsByClassName('home-outer')[0];
+        if (root.id !== 'green-theme') {
+            root.id = 'green-theme';
+        }
+    }
+
+    dark() {
+        const root = document.getElementsByClassName('home-outer')[0];
+        if (root.id) {
+            root.id = "dark-theme";
+        }
+    }
+
     render() {
         let name;
         if (this.props.user) {
@@ -62,6 +101,37 @@ class SideBar extends React.Component {
                                 <li
                                     className="cog-li leave">
                                     Profile and Account
+                                </li>
+                                {/* <Link to="/home/colors" className="colors link">
+                                    <li
+                                        className="cog-li colors">
+                                        Color Themes
+                                    </li>
+                                </Link> */}
+                                <li
+                                    className="cog-li colors"
+                                    onClick={this.red}>
+                                    Red Theme
+                                </li>
+                                <li
+                                    className="cog-li colors"
+                                    onClick={this.blue}>
+                                    Blue Theme
+                                </li>
+                                <li
+                                    className="cog-li colors"
+                                    onClick={this.yellow}>
+                                    Yellow Theme
+                                </li>
+                                <li
+                                    className="cog-li colors"
+                                    onClick={this.green}>
+                                    Green Theme
+                                </li>
+                                <li
+                                    className="cog-li colors"
+                                    onClick={this.dark}>
+                                    Dark Theme
                                 </li>
                                 <li
                                     className="cog-li leave"

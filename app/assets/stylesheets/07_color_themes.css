@@ -1,0 +1,197 @@
+#red-theme li, #blue-theme li {
+    color: #ffffff;
+}
+
+#red-theme div, #blue-theme div {
+    color: #ffffff;
+}
+
+#red-theme p, #blue-theme p {
+    color: #ffffff;
+}
+
+#red-theme h3, #blue-theme h3 {
+    color: #ffffff;
+}
+
+#red-theme span.hashtag, #blue-theme span.hashtag {
+    color: #ffffff;
+}
+
+#red-theme span.clock, #blue-theme span.clock {
+    color: #ffffff;
+}
+
+#red-theme input, #blue-theme input {
+    color: #ffffff;
+}
+
+#red-theme input::placeholder, #blue-theme input::placeholder {
+    color: #ffffff;
+}
+
+#yellow-theme li, #green-theme li {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme div,#green-theme div {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme p,#green-theme p {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme h3,#green-theme h3 {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme span.hashtag,#green-theme span.hashtag {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme span.clock,#green-theme span.clock {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme input,#green-theme input {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#yellow-theme input::placeholder,#green-theme input::placeholder {
+    color: #000000;
+    color: #ffffff;
+    /* color: #44f2c7; */
+}
+
+#red-theme .home-top:hover, #blue-theme .home-top:hover, #yellow-theme .home-top:hover, #green-theme .home-top:hover {
+    /* background-color: rgb(224, 30, 90); */
+    /* background-color: #19171D; */
+    background-color:#d1d2d333;
+}
+
+
+#red-theme .home-container.sidebar {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #bf1f13;
+    background-color: #e01e5a;
+    background-color: #771D32;
+}
+
+#red-theme .chatlog-ul {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #e01e5a;
+    /* background-color: #bf1f13;
+    background-color: #e65758;
+    background-color: #771D32; */
+}
+
+#red-theme .show-container {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #e01e5a;
+    /* background-color: #bf1f13;
+    background-color: #e65758;
+    background-color: #771D32; */
+}
+
+#red-theme .channel-top-info {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #e01e5a;
+    /* background-color: #bf1f13;
+    background-color: #e65758;
+    background-color: #771D32; */
+}
+
+#blue-theme .show-container {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #36c5f0;
+    /* background-color: rgb(29, 155, 209); */
+}
+
+#blue-theme .channel-top-info {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #36c5f0;
+    /* background-color: rgb(29, 155, 209); */
+}
+
+#blue-theme .home-container.sidebar {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: rgb(29, 155, 209);
+    /* background-color: #36c5f0; */
+}
+
+#blue-theme .chatlog-ul {
+    /* background-color: rgb(224, 30, 90); */
+    background-color: #36c5f0;
+    /* background-color: rgb(29, 155, 209); */
+}
+
+#yellow-theme .show-container {
+    background-color: rgb(242, 199, 68);
+    background-color: #ecb22d;
+}
+
+#yellow-theme .channel-top-info {
+    background-color: rgb(242, 199, 68);
+    background-color: #ecb22d;
+}
+
+#yellow-theme .home-container.sidebar {
+    background-color: rgb(242, 199, 68);
+    /* background-color: #e3ff73; */
+}
+
+#yellow-theme .chatlog-ul {
+    background-color: rgb(242, 199, 68);
+    background-color: #ecb22d;
+}
+
+#green-theme .show-container {
+    background-color: #007a5a;
+    background-color: #2eb67d;
+}
+
+#green-theme .channel-top-info {
+    background-color: #007a5a;
+    background-color: #2eb67d;
+}
+
+#green-theme .home-container.sidebar {
+    background-color: #007a5a;
+}
+
+#green-theme .chatlog-ul {
+    background-color: #007a5a;
+    background-color: #2eb67d;
+}
+
+
+/* #blue-theme li div, p, h3, span.hashtag, span.clock {
+    color: rgb(29, 155, 209);
+}
+
+#yellow-theme li, div, p, h3, span.hashtag, span.clock {
+    background-color: rgb(242, 199, 68);
+}
+
+#green-theme li, div, p, h3, span.hashtag, span.clock {
+    color: #007a5a;
+} */
+
+.colors {
+    text-decoration: none;
+}

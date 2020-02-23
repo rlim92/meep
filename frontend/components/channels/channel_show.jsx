@@ -125,6 +125,18 @@ class ChannelShow extends React.Component {
         );
     };
 
+    // getMsgTime(date) {
+    //     const obj = new Date(date);
+    //     const fullHours = obj.getHours();
+    //     let hours = fullHours % 12;
+    //     if (hours === 0) hours = 12;
+    //     const minutes = obj.getMinutes();
+    //     const tmp = `0${minutes}`;
+    //     const paddedMinutes = tmp.slice(tmp.length - 2);
+    //     const ampm = fullHours < 12 || fullHours === 0 ? 'am' : 'pm';
+    //     return `${hours}:${paddedMinutes}${ampm}`;
+    // };
+
     render() {
         let chatlog;
         let name;
@@ -163,11 +175,11 @@ class ChannelShow extends React.Component {
                 )
             }
 
-            chatlog = Object.values(this.props.messages).map( msg => {
-                return <MessageItem 
-                    key={[msg.id, msg.id]}
+            chatlog = Object.values(this.props.messages).map( (msg, idx) => {
+                return (<MessageItem 
+                    key={`msg-${msg.id}`}
                     message={msg}
-                />
+                />)
             })
         }
 

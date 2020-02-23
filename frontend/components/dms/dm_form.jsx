@@ -69,7 +69,7 @@ class DmForm extends React.Component {
                                     type="text"
                                     placeholder="Find or start a conversation"
                                 />
-                                <button className="form-button">
+                                <button className="form-button dm-form-button">
                                     Go
                                 </button>
                             </form>

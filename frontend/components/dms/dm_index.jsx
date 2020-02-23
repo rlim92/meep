@@ -62,14 +62,12 @@ class DmIndex extends React.Component {
 
         return (
             <div className="channels-index">
-                <div className="title-and-create">
-                    {/* <Link className="title-browse" to="/home/channels"> */}
-                        <h3 className="channels-header">Direct Messages</h3>
-                    {/* </Link> */}
-                    <Link className="create-link" to="/home/dms/create">
-                        <img className="create-button" src="https://image.flaticon.com/icons/svg/58/58282.svg" width="15" />
-                    </Link>
-                </div>
+                <Link className="dms-create-link" to="/home/dms/create">
+                    <div className="title-and-create">
+                            <h3 className="channels-header">Direct Messages</h3>
+                            <img className="create-button dm-button-thing" src="https://image.flaticon.com/icons/svg/58/58282.svg" width="15" />
+                    </div>
+                </Link>
                 <ul className="channels-ul">
                     {dmItemLis}
                     <li>
