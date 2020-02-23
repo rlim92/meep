@@ -330,7 +330,9 @@ body {
 }
 
 .yellow {
-    color: #ecb22e;
+    /* color: #ecb22e; */
+    /* color: rgb(242, 199, 68); */
+    color: #ffeb3b;
 }
 
 .green {

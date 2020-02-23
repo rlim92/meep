@@ -26,7 +26,9 @@ const MessageItem = (props) => {
                 <img className="profile-icon" src="https://ca.slack-edge.com/T03GU501J-UMKP3S7CK-ga0c36747e0e-48" width="36"/>
             </div>
             <div className="message-div">
-                <h3 className="message-author"><strong>{author}</strong> <span>{time(props.message.created_at)}</span></h3>
+                <h3 className="message-author">
+                    <strong>{author}</strong> <span className="clock">{time(props.message.created_at)}</span>
+                </h3>
                 <p className="message-msg">{props.message.text}</p>
             </div>
         </li>

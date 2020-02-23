@@ -317,3 +317,7 @@
 .title-browse {
     text-decoration: none;
 }
+
+.dark-logo {
+    display: none;
+}

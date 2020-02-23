@@ -35,40 +35,36 @@ class SideBar extends React.Component {
         }
     }
 
-    // goColors() {
-
-    // }
-
     red() {
-        const root = document.getElementsByClassName('home-outer')[0];
+        const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'red-theme') {
             root.id = 'red-theme';
         }
     }
 
     blue() {
-        const root = document.getElementsByClassName('home-outer')[0];
+        const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'blue-theme') {
             root.id = 'blue-theme';
         }
     }
 
     yellow() {
-        const root = document.getElementsByClassName('home-outer')[0];
+        const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'yellow-theme') {
             root.id = 'yellow-theme';
         }
     }
 
     green() {
-        const root = document.getElementsByClassName('home-outer')[0];
+        const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'green-theme') {
             root.id = 'green-theme';
         }
     }
 
     dark() {
-        const root = document.getElementsByClassName('home-outer')[0];
+        const root = document.getElementsByClassName('app-div')[0];
         if (root.id) {
             root.id = "dark-theme";
         }
@@ -84,7 +80,16 @@ class SideBar extends React.Component {
                 <div className="home-top" onClick={this.loggle.bind(this)}>
                     <h1 className="workplace">
                         <div className="logo">
-                            <img src="https://image.flaticon.com/icons/svg/2111/2111615.svg" width="14"/>
+                            <img 
+                                className="colored-logo" 
+                                src="https://image.flaticon.com/icons/svg/2111/2111615.svg" 
+                                width="14"
+                            />
+                            <img
+                                className="dark-logo"
+                                src="https://image.flaticon.com/icons/svg/2111/2111674.svg"
+                                width="14"
+                            />
                             <span className="red"><strong>m</strong></span>
                             <span className="blue"><strong>e</strong></span>
                             <span className="yellow"><strong>e</strong></span>
