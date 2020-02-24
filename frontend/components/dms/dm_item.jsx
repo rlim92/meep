@@ -17,9 +17,9 @@ class DmItem extends React.Component {
         let name = [];
 
         for (let i = 0; i < dm.member_ids.length; i++) {
-            debugger
+            // debugger
             if (dm.member_ids[i] !== currentUserId) {
-                debugger
+                // debugger
                 name.push(users[dm.member_ids[i]].username);
             }
         }
