@@ -158,11 +158,16 @@ class DmShow extends React.Component {
             //     )
             // }
 
-            chatlog = Object.values(this.props.messages).map(msg => {
-                return <MessageItem
+            chatlog = Object.values(this.props.messages).map((msg,idx) => {
+                let prev;
+                if (idx > 0) {
+                    prev = Object.values(this.props.messages)[idx - 1];
+                }
+                return (<MessageItem
                     key={[msg.id, msg.id]}
                     message={msg}
-                />
+                    prev={prev}
+                />)
             })
         }
 

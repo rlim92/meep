@@ -176,9 +176,15 @@ class ChannelShow extends React.Component {
             }
 
             chatlog = Object.values(this.props.messages).map( (msg, idx) => {
+                let prev;
+                if (idx > 0) {
+                    prev = Object.values(this.props.messages)[idx - 1];
+                }
+                // debugger;
                 return (<MessageItem 
                     key={`msg-${msg.id}`}
                     message={msg}
+                    prev={prev}
                 />)
             })
         }

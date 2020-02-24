@@ -82,7 +82,8 @@ class SideBar extends React.Component {
                         <div className="logo">
                             <img 
                                 className="colored-logo" 
-                                src="https://image.flaticon.com/icons/svg/2111/2111615.svg" 
+                                src="https://image.flaticon.com/icons/svg/2111/2111615.svg"
+                                // src="https://image.flaticon.com/icons/svg/2111/2111674.svg" 
                                 width="14"
                             />
                             <img
