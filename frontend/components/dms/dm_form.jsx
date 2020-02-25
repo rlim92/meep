@@ -5,7 +5,10 @@ class DmForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { username: "" }
+        this.state = { 
+            search: "",
+            result: [] 
+        }
     }
 
     // componentDidMount() {
@@ -26,32 +29,52 @@ class DmForm extends React.Component {
         this.props.history.push('/home');
     }
 
-    render() {
-        // const pubChannels = Object.values(this.props.channels).map(ch => {
-        //     return (
-        //         <PubChItem
-        //             key={[ch.id, ch.id]}
-        //             currentUserId={this.props.currentUserId}
-        //             addChMember={this.props.addChMember}
-        //             fetchChannel={this.props.fetchChannel}
-        //             channel={ch}
-        //             history={this.props.history}
-        //             fetchCurrentUser={this.props.fetchCurrentUser}
-        //         />
-        //     )
-        // })
+    updateDmSearch(e) {
+        const search = e.target.value;
+        let result = [];
 
-        const dmItems = Object.values(this.props.dms).map( dm => {
-            return (
-                <DmItem 
-                    key={`dm-item-${dm.id}`} 
-                    dm={dm} 
-                    users={this.props.users}
-                    history={this.props.history}
-                    currentUserId={this.props.currentUserId}
-                />
-            )
-        })
+        if (search !== "") {
+            Object.values(this.props.users).forEach( user => {
+                if (user.id !== this.props.currentUserId && user.username.includes(search)) {
+                    let already;     
+                    Object.values(this.props.dms).forEach( dm => {
+                        if (dm.member_ids.includes(user.id)) {
+                            already = true;
+                        }
+                    })
+                    if (!already) {
+                        result.push(<DmItem
+                            key={`user-item-${user.id}`}
+                            users={user}
+                            userItem={!already}
+                            history={this.props.history}
+                            currentUserId={this.props.currentUserId}
+                        />)
+                    }  
+                }
+            })
+        }
+        this.setState({search: search, result: result})
+    }
+
+    render() {
+        let dmItems;
+
+        if (this.state.search !== "") {
+            dmItems = this.state.result;
+        } else {
+            dmItems = Object.values(this.props.dms).map( dm => {
+                return (
+                    <DmItem 
+                        key={`dm-item-${dm.id}`} 
+                        dm={dm} 
+                        users={this.props.users}
+                        history={this.props.history}
+                        currentUserId={this.props.currentUserId}
+                    />
+                )
+            })
+        }
 
         return (
             <div className="add-channel-container">
@@ -62,12 +85,12 @@ class DmForm extends React.Component {
                         </div>
                         <div className="add-channel-top">
                             <h3 className="add-browse dm">Direct Messages</h3>
-                            {/* <p>Channels you can join</p> */}
                             <form className="fake-search-dm-form">
                                 <input 
                                     className="fake-search-dm"
                                     type="text"
                                     placeholder="Find or start a conversation"
+                                    onChange={this.updateDmSearch.bind(this)}
                                 />
                                 <button className="form-button dm-form-button">
                                     Go

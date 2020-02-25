@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class DmItem extends React.Component {
     constructor(props) {
         super(props);
@@ -9,20 +8,25 @@ class DmItem extends React.Component {
     };
 
     handleClick() {
-        this.props.history.push(`/home/dms/${this.props.dm.id}`)
+        if (this.props.dm) {
+            this.props.history.push(`/home/dms/${this.props.dm.id}`)
+        }
     };
 
     render() {
         const { dm, currentUserId, users } = this.props;
         let name = [];
 
-        for (let i = 0; i < dm.member_ids.length; i++) {
-            // debugger
-            if (dm.member_ids[i] !== currentUserId) {
-                // debugger
-                name.push(users[dm.member_ids[i]].username);
+        if (dm) {
+            for (let i = 0; i < dm.member_ids.length; i++) {
+                if (dm.member_ids[i] !== currentUserId) {
+                    name.push(users[dm.member_ids[i]].username);
+                }
             }
+        } else {
+            name.push(users.username);
         }
+
         
         return (
             <li

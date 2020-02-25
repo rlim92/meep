@@ -286,14 +286,17 @@
 }
 
 .dm-form-button {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    padding-right: 28px;
+    padding-left: 28px;
     /* margin-bottom: 40px; */
     /* margin-top: -4px; */
     /* margin-top: 4px; */
-    /* margin-left: 17px; */
+    margin-left: 0px;
     /* margin-right: 12px; */
-    margin-bottom: 19px;
+    margin-bottom: 21px;
+    /* display: inline-flex;
+    justify-content: center;
+    text-align: center; */
 }

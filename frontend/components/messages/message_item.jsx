@@ -29,7 +29,7 @@ const MessageItem = (props) => {
     )
 
     if (props.prev && time(props.prev.created_at) === createdAt && props.prev.author_id === props.message.author_id) {
-        debugger
+        // debugger
         img = (
             <img
                 className="profile-icon"            
