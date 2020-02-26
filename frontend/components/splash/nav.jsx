@@ -9,7 +9,7 @@ const Nav = (props) => {
                 <ul className="navbar-ul left">
                     <li>
                         <Link className="logo" to="/">
-                            <img src="https://image.flaticon.com/icons/svg/2111/2111615.svg" width="12" />
+                            <img className="colored-logo" src={window.slackIcon} width="12" />
                             <span className="red">m</span>
                             <span className="blue">e</span>
                             <span className="yellow">e</span>

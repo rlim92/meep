@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
-
+    <%= favicon_link_tag asset_path('blackhole.png') %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
@@ -14,9 +14,21 @@
     </script>
     <script type="text/javascript">
       window.linkedin = "<%= image_url("linkedin.png") %>"
+      window.greenOnline = "<%= image_url("green-online.png") %>"
     </script>
     <script type="text/javascript">
-      window.greenOnline = "<%= image_url("green-online.png") %>"
+
+      window.flame = "<%= image_url("fire.svg") %>"
+      window.waterdrop = "<%= image_url("water.svg") %>"
+      window.bolt = "<%= image_url("lightning.svg") %>"
+      window.tornado = "<%= image_url("windt.svg") %>"
+      window.void = "<%= image_url("dark.svg") %>"
+
+      window.blackhole = "<%= image_url("blackhole.svg") %>"
+      window.whitehole = "<%= image_url("favicon.svg") %>"
+
+      window.slackIcon = "<%= image_url("slackicon.svg") %>"
+
     </script>
   </head>
 

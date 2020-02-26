@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 class SideBar extends React.Component {
     constructor(props) {
         super(props);
+        this.prevIdx = "";
     }
 
     loggle(e) {
@@ -35,10 +36,29 @@ class SideBar extends React.Component {
         }
     }
 
+    gray() {
+        const root = document.getElementsByClassName('app-div')[0];
+        // debugger
+        if (root.id !== "") {
+            root.id = "";
+        } else {
+            // debugger;
+            const themes = ['red-theme', 'blue-theme', 'yellow-theme', 'green-theme', 'dark-theme'];
+            let idx = Math.floor(Math.random(themes.length - 1) * 5);
+            while (this.prevIdx === idx) {
+                idx = Math.floor(Math.random(themes.length - 1) * 5);
+            }
+            // const idx = Math.floor(Math.random(themes.length-1)*5);
+            root.id = themes[idx];
+            this.prevIdx = idx;
+        }
+    }
+
     red() {
         const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'red-theme') {
             root.id = 'red-theme';
+            this.prevIdx = 0;
         }
     }
 
@@ -46,6 +66,7 @@ class SideBar extends React.Component {
         const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'blue-theme') {
             root.id = 'blue-theme';
+            this.prevIdx = 1;
         }
     }
 
@@ -53,6 +74,7 @@ class SideBar extends React.Component {
         const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'yellow-theme') {
             root.id = 'yellow-theme';
+            this.prevIdx = 2;
         }
     }
 
@@ -60,21 +82,27 @@ class SideBar extends React.Component {
         const root = document.getElementsByClassName('app-div')[0];
         if (root.id !== 'green-theme') {
             root.id = 'green-theme';
+            this.prevIdx = 3;
         }
     }
 
     dark() {
         const root = document.getElementsByClassName('app-div')[0];
-        if (root.id) {
+        if (root.id !== 'dark-theme') {
             root.id = "dark-theme";
+            this.prevIdx = 4;
         }
     }
 
     render() {
         let name;
+        let online;
+
         if (this.props.user) {
             name = this.props.user.username;
         }
+
+
         return (
             <div className="home-container sidebar">
                 <div className="home-top" onClick={this.loggle.bind(this)}>
@@ -82,12 +110,16 @@ class SideBar extends React.Component {
                         <div className="logo">
                             <img 
                                 className="colored-logo" 
-                                src="https://image.flaticon.com/icons/svg/2111/2111615.svg"
+                                // src={window.blackhole}
+                                src={window.slackIcon}
+                                // src="https://image.flaticon.com/icons/svg/2111/2111615.svg"
                                 // src="https://image.flaticon.com/icons/svg/2111/2111674.svg" 
                                 width="14"
                             />
                             <img
                                 className="dark-logo"
+                                // className="colored-logo"
+                                // src={window.slackIcon}
                                 src="https://image.flaticon.com/icons/svg/2111/2111674.svg"
                                 width="14"
                             />
@@ -115,29 +147,39 @@ class SideBar extends React.Component {
                                     </li>
                                 </Link> */}
                                 <li
-                                    className="cog-li colors"
-                                    onClick={this.red}>
+                                    className="cog-li colors red-theme"
+                                    onClick={this.red}>                                   
+                                    <img className="element" 
+                                        src={window.flame} height="11"/>
                                     Red Theme
                                 </li>
                                 <li
-                                    className="cog-li colors"
+                                    className="cog-li colors blue-theme"
                                     onClick={this.blue}>
+                                    <img className="element"
+                                        src={window.waterdrop} height="11" />
                                     Blue Theme
                                 </li>
                                 <li
-                                    className="cog-li colors"
+                                    className="cog-li colors yellow-theme"
                                     onClick={this.yellow}>
+                                    <img className="element"
+                                        src={window.bolt} height="11" />
                                     Yellow Theme
                                 </li>
                                 <li
-                                    className="cog-li colors"
+                                    className="cog-li colors green-theme"
                                     onClick={this.green}>
+                                    <img className="element"
+                                        src={window.tornado} height="11" />
                                     Green Theme
                                 </li>
                                 <li
-                                    className="cog-li colors"
+                                    className="cog-li colors dark-theme"
                                     onClick={this.dark}>
-                                    Dark Theme
+                                    <img className="element"
+                                        src={window.void} height="11" />
+                                    Darker Theme
                                 </li>
                                 <li
                                     className="cog-li leave"
@@ -149,10 +191,34 @@ class SideBar extends React.Component {
                     </div>
                     <div className="sidebar-username-container">
                         <img 
-                            className="online"
+                            className="online blackhole"
+                            src={window.whitehole}
+                            // src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                        />
+                        <img
+                            className="online flame"
+                            src={window.flame}
+                            // src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                        />
+                        <img
+                            className="online waterdrop"
+                            src={window.waterdrop}
+                            // src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                        />
+                        <img
+                            className="online bolt"
+                            src={window.bolt}
+                            // src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                        />
+                        <img
+                            className="online tornado"
+                            src={window.tornado}
+                            // src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                        />
+                        <img
+                            className="online colored"
+                            // src={window.whitehole}
                             src='https://image.flaticon.com/icons/svg/319/319873.svg'
-                            // width="12"
-                            // height="10"
                         />
                         <p className="sidebar-username">
                             {name}
@@ -161,11 +227,13 @@ class SideBar extends React.Component {
                             className="down-arrow" 
                             src="https://image.flaticon.com/icons/svg/748/748063.svg" 
                             width="10"
+                            height="10"
                         />
                     </div>
                 </div>
-                <div className="fake-search">
-                    Jump to...
+                <div className="fake-search" onClick={this.gray.bind(this)}>
+                    <span className="jump-to">Surprise me...</span>
+                    <span className="darkness-og">Back to Classic...</span>
                 </div>
                 {/* <button className="logout" onClick={this.props.logout}>Log out</button> */}
                 <div className="contacts">

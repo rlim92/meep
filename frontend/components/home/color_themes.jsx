@@ -22,7 +22,15 @@ class ColorTheme extends React.Component {
     }
 
     render() {
-        return null;
+        return (
+            <div>
+                <img src={window.flame} width="50"/>
+                <img src={window.waterdrop} width="50"/>
+                <img src={window.bolt} width="50"/>
+                <img src={window.tornado} width="50"/>
+                <img src={window.slackIcon} width="50" />
+            </div>
+        )
     }
 }
 

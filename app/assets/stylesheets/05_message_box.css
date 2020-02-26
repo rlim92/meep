@@ -259,7 +259,7 @@
     filter: invert(100%) sepia(5%) saturate(570%) hue-rotate(175deg) brightness(89%) contrast(85%);
     margin-left: 20px;
     padding-right: 2px;
-    margin-top: 2px;
+    margin-top: 4px;
     margin-bottom: 9px;
     color: #D1D2D3;
     cursor: pointer;
@@ -299,7 +299,7 @@
     filter: invert(100%) sepia(5%) saturate(570%) hue-rotate(175deg) brightness(89%) contrast(85%);
     margin-left: 0px;
     padding-right: 2px;
-    margin-top: 2px;
+    margin-top: 4px;
     margin-bottom: 9px;
     color: #D1D2D3;
 }
