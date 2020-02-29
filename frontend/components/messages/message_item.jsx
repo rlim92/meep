@@ -56,7 +56,7 @@ const MessageItem = (props) => {
         img = (
             <img
                 className="profile-icon"
-                src={richIcon}
+                src={blackoutIcon}
                 width="36"
             />
         )
