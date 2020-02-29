@@ -50,7 +50,9 @@ class DmForm extends React.Component {
                             history={this.props.history}
                             currentUserId={this.props.currentUserId}
                         />)
-                    }  
+                    }  else {
+                        
+                    }
                 }
             })
         }

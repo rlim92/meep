@@ -148,37 +148,37 @@ class SideBar extends React.Component {
                                 </Link> */}
                                 <li
                                     className="cog-li colors red-theme"
-                                    onClick={this.red}>                                   
-                                    <img className="element" 
-                                        src={window.flame} height="11"/>
+                                    onClick={this.red.bind(this)}>                                   
+                                    {/* <img className="element" 
+                                        src={window.flame} height="11"/> */}
                                     Red Theme
                                 </li>
                                 <li
                                     className="cog-li colors blue-theme"
-                                    onClick={this.blue}>
-                                    <img className="element"
-                                        src={window.waterdrop} height="11" />
+                                    onClick={this.blue.bind(this)}>
+                                    {/* <img className="element"
+                                        src={window.waterdrop} height="11" /> */}
                                     Blue Theme
                                 </li>
                                 <li
                                     className="cog-li colors yellow-theme"
-                                    onClick={this.yellow}>
-                                    <img className="element"
-                                        src={window.bolt} height="11" />
+                                    onClick={this.yellow.bind(this)}>
+                                    {/* <img className="element"
+                                        src={window.bolt} height="11" /> */}
                                     Yellow Theme
                                 </li>
                                 <li
                                     className="cog-li colors green-theme"
-                                    onClick={this.green}>
-                                    <img className="element"
-                                        src={window.tornado} height="11" />
+                                    onClick={this.green.bind(this)}>
+                                    {/* <img className="element"
+                                        src={window.tornado} height="11" /> */}
                                     Green Theme
                                 </li>
                                 <li
                                     className="cog-li colors dark-theme"
-                                    onClick={this.dark}>
-                                    <img className="element"
-                                        src={window.void} height="11" />
+                                    onClick={this.dark.bind(this)}>
+                                    {/* <img className="element"
+                                        src={window.void} height="11" /> */}
                                     Darker Theme
                                 </li>
                                 <li
