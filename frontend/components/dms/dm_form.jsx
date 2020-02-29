@@ -33,7 +33,7 @@ class DmForm extends React.Component {
                     member_ids: [this.props.currentUserId, user.id]
                 }
                 this.props.createDm(dm)
-                    .then(() => this.props.history.push('/home'))
+                    .then(() => this.props.history.push('/home/dm'))
             }
         })
     }

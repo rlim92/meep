@@ -9,19 +9,28 @@ class Filler extends React.Component {
     componentDidMount() {
         let firstChannel;
         // debugger;
+        const { currentUser } = this.props;
 
-        // if (this.props.history)
-
-        if (!this.props.currentUser) {
-            this.props.fetchCurrentUser(this.props.currentUserId)
+        if (this.props.fromDmForm) {
+            const dms = Object.values(this.props.dms)
+            const newDm = dms[dms.length-1]
+            // debugger;
+            this.props.history.push(`/home/dms/${newDm.id}`)
+        } else if (this.props.fromChForm) {
+            const chs = Object.values(this.props.channels)
+            const newCh = chs[chs.length - 1]
+            this.props.history.push(`/home/channels/${newCh.id}`)
         } else {
-            firstChannel = this.props.currentUser.channel_ids[0];
+            if (!this.props.currentUser) {
+                this.props.fetchCurrentUser(this.props.currentUserId)
+            } else {
+                firstChannel = currentUser.channel_ids[0];
+            }
+    
+            if (firstChannel) {
+                this.props.history.push(`/home/channels/${firstChannel}`)
+            }
         }
-
-        if (firstChannel) {
-            this.props.history.push(`/home/channels/${firstChannel}`)
-        }
-
     }
 
     // componentDidUpdate(prevProps) {

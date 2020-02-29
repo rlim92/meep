@@ -17,7 +17,7 @@ class DmItem extends React.Component {
             }
 
             this.props.createDm(dm)
-                .then( () => this.props.history.push('/home') )
+                .then( () => this.props.history.push('/home/dm') )
         }
     };
 

@@ -21,7 +21,7 @@ class ChannelForm extends React.Component {
         e.preventDefault();
 
         this.props.action(this.state).then(
-            () => this.props.history.push(`/home/`)
+            () => this.props.history.push(`/home/channel`)
         );
     };
 
