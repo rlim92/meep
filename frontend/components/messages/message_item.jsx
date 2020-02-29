@@ -7,6 +7,11 @@ const MessageItem = (props) => {
     } else {
         author = props.message.author_name
     }
+
+    const red = window.redIcon
+    const blue = window.blueIcon
+    const yellow = window.yellowIcon
+    const green = window.greenIcon
     
     const time = date => {
         const obj = new Date(date);
@@ -39,13 +44,57 @@ const MessageItem = (props) => {
         createdAt = "";
         authorEl = "";
     } else {
-        img = (
-            <img 
-                className="profile-icon" 
-                src="https://ca.slack-edge.com/T03GU501J-UMKP3S7CK-ga0c36747e0e-48" 
-                width="36"
-            />
-        )
+        switch (props.message.author_id % 5) {
+            case 0:
+
+                img = (
+                    <img 
+                        className="profile-icon" 
+                        src="https://ca.slack-edge.com/T03GU501J-UMKP3S7CK-ga0c36747e0e-48" 
+                        width="36"
+                    />
+                )
+                break;
+            case 1:
+                img = (
+                    <img
+                        className="profile-icon"
+                        src={redIcon}
+                        width="36"
+                    />
+                )
+                break;
+            case 2:
+
+                img = (
+                    <img
+                        className="profile-icon"
+                        src={blueIcon}
+                        width="36"
+                    />
+                )
+                break;
+            case 3:
+
+                img = (
+                    <img
+                        className="profile-icon"
+                        src={yellowIcon}
+                        width="36"
+                    />
+                )
+                break;
+            case 4:
+
+                img = (
+                    <img
+                        className="profile-icon"
+                        src={greenIcon}
+                        width="36"
+                    />
+                )
+                break;
+        }
     }
 
 
