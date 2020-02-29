@@ -3,6 +3,10 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             @user.channels << Channel.find_by(name: 'Meeptown')
+            @user.direct_messages.create(is_team: false)
+            rich = User.find_by(email: 'rich@meep.com')
+            @user.direct_messages[0].member_ids = [@user.id, rich.id]
+            @user.direct_messages[0].messages.create(author_id: rich.id, text: "Welcome to Meep! To create a DM, click the button next to 'Direct Messages' on the left and search for members in your subscribed channels.")
             login!(@user)
             render :show
         else
