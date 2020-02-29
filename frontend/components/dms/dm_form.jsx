@@ -23,6 +23,21 @@ class DmForm extends React.Component {
     //     );
     // }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        // debugger;
+        Object.values(this.props.users).forEach( user => {
+            if (e.target.firstElementChild.value === user.username) {
+                const dm = {
+                    is_team: false,
+                    member_ids: [this.props.currentUserId, user.id]
+                }
+                this.props.createDm(dm)
+                    .then(() => this.props.history.push('/home'))
+            }
+        })
+    }
+
     exitBrowse(e) {
         // debugger;
         // console.log(this.props);
@@ -92,7 +107,7 @@ class DmForm extends React.Component {
                         </div>
                         <div className="add-channel-top">
                             <h3 className="add-browse dm">Direct Messages</h3>
-                            <form className="fake-search-dm-form">
+                            <form className="fake-search-dm-form" onSubmit={this.handleSubmit.bind(this)}>
                                 <input 
                                     className="fake-search-dm"
                                     type="text"
