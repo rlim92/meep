@@ -8,10 +8,11 @@ const MessageItem = (props) => {
         author = props.message.author_name
     }
 
-    const red = window.redIcon
-    const blue = window.blueIcon
-    const yellow = window.yellowIcon
-    const green = window.greenIcon
+    const red = window.redIcon;
+    const blue = window.blueIcon;
+    const yellow = window.yellowIcon;
+    const green = window.greenIcon;
+    const black = window.blackIcon;
     
     const time = date => {
         const obj = new Date(date);
@@ -43,14 +44,29 @@ const MessageItem = (props) => {
         )
         createdAt = "";
         authorEl = "";
+    } else if (author === "DemoUser") {
+        img = (
+            <img
+                className="profile-icon"
+                src={blackIcon}
+                width="36"
+            />
+        )
+    } else if (author === 'rich') {
+        img = (
+            <img
+                className="profile-icon"
+                src={richIcon}
+                width="36"
+            />
+        )
     } else {
         switch (props.message.author_id % 5) {
             case 0:
-
                 img = (
                     <img 
                         className="profile-icon" 
-                        src="https://ca.slack-edge.com/T03GU501J-UMKP3S7CK-ga0c36747e0e-48" 
+                        src={blackIcon}
                         width="36"
                     />
                 )
@@ -65,7 +81,6 @@ const MessageItem = (props) => {
                 )
                 break;
             case 2:
-
                 img = (
                     <img
                         className="profile-icon"
@@ -75,7 +90,6 @@ const MessageItem = (props) => {
                 )
                 break;
             case 3:
-
                 img = (
                     <img
                         className="profile-icon"
@@ -85,7 +99,6 @@ const MessageItem = (props) => {
                 )
                 break;
             case 4:
-
                 img = (
                     <img
                         className="profile-icon"
@@ -97,11 +110,9 @@ const MessageItem = (props) => {
         }
     }
 
-
     return (
         <li className="message">
             <div className="icon-div">
-                {/* <img className="profile-icon" src="https://ca.slack-edge.com/T03GU501J-UMKP3S7CK-ga0c36747e0e-48" width="36"/> */}
                 {img}
             </div>
             <div className="message-div">
