@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import DmForm from './dm_form';
+import { createDm } from '../../actions/dm_actions';
 
 const mSTP = (state) => {
     return {
@@ -11,7 +12,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-
+        createDm: (dm) => dispatch(createDm(dm))
     }
 }
 

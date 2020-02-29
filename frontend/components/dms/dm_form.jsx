@@ -49,6 +49,7 @@ class DmForm extends React.Component {
                             userItem={!already}
                             history={this.props.history}
                             currentUserId={this.props.currentUserId}
+                            createDm={this.props.createDm}
                         />)
                     }  else {
                         
@@ -59,11 +60,15 @@ class DmForm extends React.Component {
         this.setState({search: search, result: result})
     }
 
+
     render() {
         let dmItems;
+        let blurb = "Recent Conversations"
+
 
         if (this.state.search !== "") {
             dmItems = this.state.result;
+            blurb = "";
         } else {
             dmItems = Object.values(this.props.dms).map( dm => {
                 return (
@@ -110,7 +115,7 @@ class DmForm extends React.Component {
                         </div>
                     </div>
                     <div className="pub-list-container">
-                        <p className="add-blurb">Recent Conversations</p>
+                        <p className="add-blurb">{blurb}</p>
                         <ul className="pub-ul">
                             {dmItems}
                         </ul>

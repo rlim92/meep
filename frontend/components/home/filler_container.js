@@ -8,7 +8,8 @@ const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         channels: state.entities.channels,
-        currentUserId: state.session.id
+        currentUserId: state.session.id,
+        dms: state.entities.dms
     }
 };
 

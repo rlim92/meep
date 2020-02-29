@@ -10,6 +10,14 @@ class DmItem extends React.Component {
     handleClick() {
         if (this.props.dm) {
             this.props.history.push(`/home/dms/${this.props.dm.id}`)
+        } else {
+            const dm = { 
+                is_team: false, 
+                member_ids: [ this.props.currentUserId, this.props.users.id]
+            }
+
+            this.props.createDm(dm)
+                .then( () => this.props.history.push('/home') )
         }
     };
 

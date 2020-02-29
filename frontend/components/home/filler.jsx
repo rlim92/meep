@@ -10,6 +10,8 @@ class Filler extends React.Component {
         let firstChannel;
         // debugger;
 
+        // if (this.props.history)
+
         if (!this.props.currentUser) {
             this.props.fetchCurrentUser(this.props.currentUserId)
         } else {

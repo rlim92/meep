@@ -178,10 +178,16 @@ class DmShow extends React.Component {
                         <div className="channel-top right">
                             <p className="channel-name"><strong><span className="ch-hashtag"></span>{name.join(", ")}</strong></p>
                             <div className="little-ch-icons">
-                                <img className="star" src="https://image.flaticon.com/icons/svg/2107/2107992.svg" width="12" />
+                                <img className="star" 
+                                    src="https://image.flaticon.com/icons/svg/2107/2107992.svg" 
+                                    width="12"
+                                    height="12" />
                                 <span className="pipe">|</span>
                                 <div className="member-list">
-                                    <img className="png member-icon" src="https://image.flaticon.com/icons/svg/1250/1250689.svg" width="12" />
+                                    <img className="png member-icon" 
+                                        src="https://image.flaticon.com/icons/svg/1250/1250689.svg" 
+                                        width="12" 
+                                        height="12"/>
                                     <p className="member-count">{memberCount}</p>
                                 </div>
                             </div>

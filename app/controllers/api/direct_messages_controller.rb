@@ -20,16 +20,17 @@ class Api::DirectMessagesController < ApplicationController
         end
     end
 
-    # def create
-    #     @channel = Channel.new(channel_params)
-    #     @channel.admin_id = current_user.id
-    #     if @channel.save
-    #         @channel.members << current_user
-    #         render :show
-    #     else
-    #         render json: @channel.errors.full_messages, status: 420
-    #     end
-    # end
+    def create
+        @dm = DirectMessage.new(is_team: params[:dm][:is_team])
+        # @dm.admin_id = current_user.id
+        # debugger
+        if @dm.save
+            @dm.member_ids = params[:dm][:member_ids]
+            render :show
+        else
+            render json: @dm.errors.full_messages, status: 420
+        end
+    end
 
     def show
         @dm = DirectMessage.find(params[:id])
