@@ -50,6 +50,7 @@ const MessageItem = (props) => {
                 className="profile-icon"
                 src={blackIcon}
                 width="36"
+                height="36"
             />
         )
     } else if (author === 'rich') {
@@ -58,6 +59,7 @@ const MessageItem = (props) => {
                 className="profile-icon"
                 src={richIcon}
                 width="36"
+                height="36"
             />
         )
     } else {
@@ -68,6 +70,7 @@ const MessageItem = (props) => {
                         className="profile-icon" 
                         src={blackIcon}
                         width="36"
+                        height="36"
                     />
                 )
                 break;
@@ -77,6 +80,7 @@ const MessageItem = (props) => {
                         className="profile-icon"
                         src={redIcon}
                         width="36"
+                        height="36"
                     />
                 )
                 break;
@@ -86,6 +90,7 @@ const MessageItem = (props) => {
                         className="profile-icon"
                         src={blueIcon}
                         width="36"
+                        height="36"
                     />
                 )
                 break;
@@ -95,6 +100,7 @@ const MessageItem = (props) => {
                         className="profile-icon"
                         src={yellowIcon}
                         width="36"
+                        height="36"
                     />
                 )
                 break;
@@ -104,6 +110,7 @@ const MessageItem = (props) => {
                         className="profile-icon"
                         src={greenIcon}
                         width="36"
+                        height="36"
                     />
                 )
                 break;

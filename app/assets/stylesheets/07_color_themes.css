@@ -509,3 +509,17 @@
 *::selection {
     background-color: #9a9c9e;
 }
+
+
+/* #normal li, #normal div,
+#normal p, #normal h3,
+#normal span.hashtag
+,#normal span.clock
+,#normal input
+,#normal input::placeholder {
+    color: #ffffff;
+    color: #e01e5a;
+    color: #36c5f0;
+    color: #ffeb3b;
+    color: #2eb67d;
+} */

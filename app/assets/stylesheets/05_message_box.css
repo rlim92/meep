@@ -326,6 +326,7 @@
 
 .member-list {
     cursor: pointer;
+    /* margin-bottom: 4px; */
 }
 
 .member-list:hover .member-icon {
