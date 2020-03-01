@@ -213,7 +213,8 @@ class ChannelShow extends React.Component {
                                 <div className="member-list">
                                     <img 
                                         className="png member-icon" 
-                                        src={person}
+                                        // src={person}
+                                        src={personIcon}
                                         // src="https://image.flaticon.com/icons/svg/1250/1250689.svg" 
                                         width="12"
                                         height="12"

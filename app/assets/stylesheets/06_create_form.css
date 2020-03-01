@@ -219,15 +219,23 @@
 }
 
 .pub-li {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
     width: 90%;
     box-shadow: rgb(53, 55, 59) 0px -1px 0px 0px;
     padding-left: 10px;
     padding-top: 1px;
     margin-top: 1px;
+    padding-bottom: 4px;
     /* margin-right: -10px; */
     cursor: pointer;
     /* z-index: 2; */
     /* margin-right: 5px; */
+}
+
+.user-to-add-li {
+    display: flex;
 }
 
 .pub-li:hover {
@@ -242,6 +250,15 @@
     padding-top: 10px;
     margin-bottom: 0px;
     padding-bottom: 15px;
+}
+
+.user-ch-name {
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 0px;
+    padding-top: 13px;
+    margin-bottom: 0px;
+    padding-bottom: 13px;
 }
 
 .dm-item {
