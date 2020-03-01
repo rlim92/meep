@@ -2,6 +2,7 @@ import React from 'react';
 // import MessageIndex from '../messages/message_index_container';
 import MessageItem from '../messages/message_item_container';
 import MessageForm from '../messages/message_form';
+import { Link } from 'react-router-dom';
 
 class ChannelShow extends React.Component {
 
@@ -156,12 +157,15 @@ class ChannelShow extends React.Component {
 
             if (!this.props.channel.is_private || this.props.channel.admin_id === this.props.currentUserId) {
                 publicAdd = (
-                    <li
-                        className="cog-li add"
-                    // onClick={this.deleteChannel.bind(this)}
-                    >
-                        Add people to channel
-                    </li>
+                    <Link to={`/home/channels/${this.props.channel.id}/add`}
+                        className="ch-add-link">
+                        <li
+                            className="cog-li add"
+                        // onClick={this.deleteChannel.bind(this)}
+                        >
+                            Add people to channel
+                        </li>
+                    </Link>
                 )
             }
 

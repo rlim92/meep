@@ -92,6 +92,10 @@
     min-width: 120px;
 }
 
+.ch-add-link {
+    text-decoration: none;
+}
+
 .cog-li:hover {
     /* background-color: #1064a3; */
     background-color: #443642;

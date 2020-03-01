@@ -2,6 +2,7 @@ import React from 'react';
 // import MessageIndex from '../messages/message_index_container';
 import MessageItem from '../messages/message_item_container';
 import MessageForm from '../messages/message_form';
+import { Link } from 'react-router-dom';
 
 class DmShow extends React.Component {
 
@@ -128,6 +129,7 @@ class DmShow extends React.Component {
         let name = [];
         let memberCount = 0;
         let adminOptions;
+        let userId;
         // let users;
 
 
@@ -142,8 +144,10 @@ class DmShow extends React.Component {
                 for (let i = 0; i < this.props.dm.member_ids.length; i++) {
                     if (this.props.dm.member_ids[i] !== this.props.currentUserId) {
                         name.push(this.props.users[this.props.dm.member_ids[i]].username)
+                        userId = this.props.users[this.props.dm.member_ids[i]].id
                     }
                 }
+
             }
 
             memberCount = this.props.dm.member_ids.length
@@ -197,12 +201,14 @@ class DmShow extends React.Component {
                             <div className="outer-layer-dropdown" onClick={this.closeCog.bind(this)}>
                                 <div className="cog-list">
                                     <div className="cog-ul">
-                                        <li
-                                            className="cog-li add-to-ch"
-                                            // onClick={this.leaveChannel.bind(this)}
-                                        >
-                                            Add {name} to a channel...
-                                        </li>
+                                        <Link to={`/home/people/${userId}/addTo`}className="ch-add-link">
+                                            <li
+                                                className="cog-li add-to-ch"
+                                                // onClick={this.leaveChannel.bind(this)}
+                                            >
+                                                Add {name} to a channel...
+                                            </li>
+                                        </Link>
                                         {adminOptions}
                                     </div>
                                 </div>
