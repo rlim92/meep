@@ -281,7 +281,8 @@
 
 .star:hover {
     filter: none;
-    filter: invert(82%) sepia(99%) saturate(1437%) hue-rotate(322deg) brightness(101%) contrast(90%);
+    /* filter: invert(82%) sepia(99%) saturate(1437%) hue-rotate(322deg) brightness(101%) contrast(90%); */
+    filter: invert(96%) sepia(51%) saturate(2523%) hue-rotate(325deg) brightness(110%) contrast(103%);
 }
 
 .pipe {
@@ -309,11 +310,13 @@
 
 .add-description-div:hover .pen {
     filter: none;
-    filter: invert(31%) sepia(74%) saturate(1199%) hue-rotate(133deg) brightness(89%) contrast(99%);
+    /* filter: invert(31%) sepia(74%) saturate(1199%) hue-rotate(133deg) brightness(89%) contrast(99%); */
+    filter: invert(49%) sepia(100%) saturate(288%) hue-rotate(103deg) brightness(99%) contrast(96%);
 }
 
 .add-description-div:hover .add-desc {
-    color: #017a5a;
+    /* color: #017a5a; */
+    color: #2eb67d;
     filter: none;
 }
 
@@ -327,11 +330,13 @@
 
 .member-list:hover .member-icon {
     filter: none;
-    filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%);
+    /* filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%); */
+    filter: invert(66%) sepia(87%) saturate(1260%) hue-rotate(159deg) brightness(100%) contrast(89%);
 }
 
 .member-list:hover .member-count {
-    color: #1d9bd1;
+    /* color: #1d9bd1; */
+    color: #36c5f0;
     filter: none;
     /* filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%); */
 
@@ -388,11 +393,13 @@
 
 .tack-hover:hover .tack {
     filter: none;
-    filter: invert(16%) sepia(96%) saturate(1147%) hue-rotate(308deg) brightness(95%) contrast(100%);
+    /* filter: invert(16%) sepia(96%) saturate(1147%) hue-rotate(308deg) brightness(95%) contrast(100%); */
+    filter: invert(30%) sepia(71%) saturate(6947%) hue-rotate(330deg) brightness(90%) contrast(93%);
 }
 
 .tack-hover:hover .tack-count{
     /* color: #017a5a; */
-    color: #7c1d3d;
+    /* color: #7c1d3d; */
+    color: #e01e5a;
     filter: none;
 }
