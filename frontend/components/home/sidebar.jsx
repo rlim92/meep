@@ -132,14 +132,14 @@ class SideBar extends React.Component {
                     <div className="outer-log-dropdown">
                         <div className="prof-list">
                             <div className="cog-ul">
-                                <li
+                                {/* <li
                                     className="cog-li leave">
                                     Set a Status
                                 </li>
                                 <li
                                     className="cog-li leave">
                                     Profile and Account
-                                </li>
+                                </li> */}
                                 {/* <Link to="/home/colors" className="colors link">
                                     <li
                                         className="cog-li colors">
@@ -192,8 +192,8 @@ class SideBar extends React.Component {
                     <div className="sidebar-username-container">
                         <img 
                             className="online blackhole"
-                            src={window.whitehole}
-                            // src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                            // src={blackhole}
+                            src='https://image.flaticon.com/icons/svg/319/319873.svg'
                         />
                         <img
                             className="online flame"

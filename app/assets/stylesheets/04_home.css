@@ -304,6 +304,10 @@
     /* margin-bottom: -3px; */
 }
 
+.dm-online-icon {
+    filter: invert(1);
+}
+
 .sidebar-username-container {
     display: flex;
     /* position: relative; */

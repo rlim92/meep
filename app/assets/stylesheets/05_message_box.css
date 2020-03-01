@@ -89,7 +89,7 @@
     font-size: 15px;
     color: #D1D2D3;
     cursor: pointer;
-
+    min-width: 120px;
 }
 
 .cog-li:hover {

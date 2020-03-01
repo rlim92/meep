@@ -12,28 +12,21 @@ class DmIndexItem extends React.Component {
     // }
 
     render() {
-        // const { currentUserId } = this.props;
-        // let otherMemberId; 
-        // for (let i = 0; i < this.props.dm.member_ids.length; i++) {
-        //     if (this.props.dm.member_ids[i] !== currentUserId) {
-        //         // debugger
-        //         otherMemberId = i;
-        //     }
-
-        // }
-
-        // let otherMemberName = "loading...";
-        // debugger
-        // if (this.props.users && this.props.users[otherMemberId]) {
-        //     debugger;
-        //     otherMemberName = this.props.users[otherMemberId].username;
-        // }
-
+        let iconThing = this.props.dm.member_ids.length
+        if (this.props.dm.member_ids.length < 3) {
+            iconThing = (
+                <img 
+                    className="dm-online-icon"
+                    src='https://image.flaticon.com/icons/svg/319/319873.svg'
+                    width="9"
+                    height="9"
+                     />
+            )
+        }
         return (
             <Link to={`/home/dms/${this.props.dm.id}`}>
                 <li id={`dm-${this.props.dm.id}`} className="channel-li">
-                <span className="hashtag">{this.props.dm.member_ids.length}</span>
-                    {/* Name */}
+                <span className="hashtag">{iconThing}</span>
                     {this.props.otherMemberName}
                 </li>
             </Link>

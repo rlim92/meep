@@ -55,7 +55,7 @@ class Filler extends React.Component {
                             Join a channel!
                         </Link>
                     </h2>
-                    <img src="https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/Blog_Hipchat_to_Slack.png"/>
+                    <img src={blackhole}/>
                 </div>
             </div>
         )
