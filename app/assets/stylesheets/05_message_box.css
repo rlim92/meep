@@ -264,12 +264,23 @@
     margin-left: 20px;
     padding-right: 2px;
     margin-top: 4px;
-    margin-bottom: 9px;
+    margin-bottom: 3px;
     color: #D1D2D3;
     cursor: pointer;
 }
 
+.tack {
+    margin-left: 0px;
+    margin-right: 3px;
+}
+
+.pen {
+    margin-left: 0px;
+    margin-right: 2px;
+}
+
 .star:hover {
+    filter: none;
     filter: invert(82%) sepia(99%) saturate(1437%) hue-rotate(322deg) brightness(101%) contrast(90%);
 }
 
@@ -277,10 +288,33 @@
     font-family: Lato, sans-serif;
     font-weight: 300;
     font-size: 13px;
-    color: #55575a;
+    /* color: #55575a; */
+    color: #5b5d5f;
     margin-top: 2px;
-    padding-left: 4px;
+    margin-left:0px;
+    padding-left: 5px;
     padding-right: 6px;
+}
+
+.pipe-two {
+    padding-left: 7px;
+    margin-right: 0px;
+}
+
+.add-description-div {
+    display: flex;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.add-description-div:hover .pen {
+    filter: none;
+    filter: invert(31%) sepia(74%) saturate(1199%) hue-rotate(133deg) brightness(89%) contrast(99%);
+}
+
+.add-description-div:hover .add-desc {
+    color: #017a5a;
+    filter: none;
 }
 
 .ch-hashtag {
@@ -292,11 +326,15 @@
 }
 
 .member-list:hover .member-icon {
+    filter: none;
     filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%);
 }
 
 .member-list:hover .member-count {
     color: #1d9bd1;
+    filter: none;
+    /* filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%); */
+
 }
 
 .member-icon {
@@ -305,7 +343,7 @@
     padding-right: 2px;
     margin-top: 4px;
     margin-bottom: 9px;
-    color: #D1D2D3;
+    /* color: #D1D2D3; */
 }
 
 .member-count {
@@ -331,4 +369,30 @@
     width: 100vw;
     /* background-color: white; */
     /* z-index: 10; */
+}
+.add-desc {
+    margin-bottom: 3px;
+}
+
+.tack-count {
+    color: #D1D2D3;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 2px;
+    /* margin-left: 40px; */
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.tack-hover:hover .tack {
+    filter: none;
+    filter: invert(16%) sepia(96%) saturate(1147%) hue-rotate(308deg) brightness(95%) contrast(100%);
+}
+
+.tack-hover:hover .tack-count{
+    /* color: #017a5a; */
+    color: #7c1d3d;
+    filter: none;
 }

@@ -405,3 +405,54 @@
 .colored-logo, .dark-logo {
     transform: rotate(90deg);
 }
+
+#red-theme .member-icon, #blue-theme .member-icon, #green-theme .member-icon, 
+#red-theme .star, #blue-theme .star, #green-theme .star {
+    filter: invert(1);
+}
+
+#yellow-theme .member-icon,#yellow-theme .star {
+    filter: invert(0);
+}
+
+#red-theme .star:hover,#blue-theme .star:hover,
+#yellow-theme .star:hover,#green-theme .star:hover {
+    filter: none;
+    filter: invert(82%) sepia(99%) saturate(1437%) hue-rotate(322deg) brightness(101%) contrast(90%);
+}
+
+#red-theme .member-list:hover .member-icon,#blue-theme .member-list:hover .member-icon,
+#yellow-theme .member-list:hover .member-icon,#green-theme .member-list:hover .member-icon {
+    filter: none;
+    filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%);
+}
+
+#red-theme .tack-hover:hover .tack,#blue-theme .tack-hover:hover .tack, 
+#yellow-theme .tack-hover:hover .tack,#green-theme .tack-hover:hover .tack {
+    filter: none;
+    filter: invert(16%) sepia(96%) saturate(1147%) hue-rotate(308deg) brightness(95%) contrast(100%);
+}
+
+#red-theme .add-description-div:hover .pen,#blue-theme .add-description-div:hover .pen,
+#yellow-theme .add-description-div:hover .pen,#green-theme .add-description-div:hover .pen {
+    filter: none;
+    filter: invert(31%) sepia(74%) saturate(1199%) hue-rotate(133deg) brightness(89%) contrast(99%);
+}
+
+#red-theme .add-description-div:hover .add-desc,#blue-theme .add-description-div:hover .add-desc,
+#yellow-theme .add-description-div:hover .add-desc,#green-theme .add-description-div:hover .add-desc {
+    color: #017a5a;
+    filter: none;
+}
+
+#red-theme .member-list:hover .member-count,#blue-theme .member-list:hover .member-count,
+#yellow-theme .member-list:hover .member-count,#green-theme .member-list:hover .member-count {
+    color: #1d9bd1;
+    filter: none;
+}
+
+#red-theme .tack-hover:hover .tack-count,#blue-theme .tack-hover:hover .tack-count,
+#yellow-theme .tack-hover:hover .tack-count,#green-theme .tack-hover:hover .tack-count{
+    color: #7c1d3d;
+    filter: none;
+}

@@ -142,11 +142,12 @@
     /* margin-top: -1px; */
     margin-top: 4px;
     margin-left: 12px;
-    margin-right: 12px;
+    margin-right: 11px;
     margin-bottom: 19px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
+    padding-right: 1px;
     cursor: pointer;
     font-weight: 300;
 }
@@ -305,7 +306,9 @@
 }
 
 .dm-online-icon {
-    filter: invert(1);
+    /* filter: invert(1); */
+    filter: invert(97%) sepia(86%) saturate(734%) hue-rotate(72deg) brightness(98%) contrast(99%);
+    /* padding-bottom:1px; */
 }
 
 .sidebar-username-container {

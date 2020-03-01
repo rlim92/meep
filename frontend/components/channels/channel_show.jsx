@@ -68,7 +68,7 @@ class ChannelShow extends React.Component {
 
             const channelId = this.props.match.params.channelId;
             this.props.fetchChannelMembers(channelId).then(
-                this.props.fetchChannelMessages(this.props.match.params.channelId)
+                () => this.props.fetchChannelMessages(this.props.match.params.channelId)
             )
         }
         // this.createLiveConnection();
@@ -198,11 +198,14 @@ class ChannelShow extends React.Component {
                 <div className="chatlog channel">
                     <div className="channel-top-info">
                         <div className="channel-top right">
-                            <p className="channel-name"><strong><span className="ch-hashtag">#</span>{name}</strong></p>
+                            <p className="channel-name">
+                                <strong><span className="ch-hashtag">#</span>{name}</strong>
+                            </p>
                             <div className="little-ch-icons">
                                 <img 
                                     className="star" 
-                                    src="https://image.flaticon.com/icons/svg/2107/2107992.svg" 
+                                    src={star}
+                                    // src="https://image.flaticon.com/icons/svg/2107/2107992.svg" 
                                     width="12" 
                                     height="12"
                                     />
@@ -210,11 +213,32 @@ class ChannelShow extends React.Component {
                                 <div className="member-list">
                                     <img 
                                         className="png member-icon" 
-                                        src="https://image.flaticon.com/icons/svg/1250/1250689.svg" 
+                                        src={person}
+                                        // src="https://image.flaticon.com/icons/svg/1250/1250689.svg" 
                                         width="12"
                                         height="12"
                                         />
                                     <p className="member-count">{memberCount}</p>
+                                </div>
+                                <span className="pipe pipe-two">|</span>
+                                <div className="member-list tack-hover">
+                                    <img
+                                        className="star tack"
+                                        src={tack}
+                                        width="12"
+                                        height="12"
+                                    />
+                                    <p className="tack-count">0</p>
+                                </div>
+                                <span className="pipe pipe-three">|</span>
+                                <div className="add-description-div">
+                                    <img
+                                        className="star pen"
+                                        src={pen}
+                                        width="12"
+                                        height="12"
+                                    />
+                                    <p className="member-count add-desc">Add a description</p>
                                 </div>
                             </div>
                         </div>
