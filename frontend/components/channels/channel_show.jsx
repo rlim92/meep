@@ -263,7 +263,7 @@ class ChannelShow extends React.Component {
                     </div>
                     <ul className="chatlog-ul">
                         {chatlog}
-                        <div ref={this.bottom}></div>
+                        <div className="bottom-chat" ref={this.bottom}></div>
                     </ul>
                 </div>
                 <div className="message-form-outer-container">

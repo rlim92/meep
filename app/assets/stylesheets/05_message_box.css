@@ -404,3 +404,8 @@
     color: #e01e5a;
     filter: none;
 }
+
+.bottom-chat {
+    width:0px;
+    height:0px;
+}
