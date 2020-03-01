@@ -234,6 +234,10 @@
     /* margin-right: 5px; */
 }
 
+.dm-create-item {
+    display: flex;
+}
+
 .user-to-add-li {
     display: flex;
 }
@@ -263,6 +267,11 @@
 
 .dm-item {
     font-weight: 400;
+}
+
+.dm-create-name-item {
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 
 .fake-search-dm {
