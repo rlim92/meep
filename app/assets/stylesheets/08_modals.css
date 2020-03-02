@@ -106,6 +106,25 @@
     border-radius: 4px;
 }
 
+.x-button {
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+}
+
 .create-button {
     cursor: pointer;
+}
+
+.solid-star {
+    display: none;
+    filter: invert(96%) sepia(51%) saturate(2523%) hue-rotate(325deg) brightness(110%) contrast(103%);
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
 }

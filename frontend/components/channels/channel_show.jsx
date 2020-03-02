@@ -8,7 +8,10 @@ class ChannelShow extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.bottom = React.createRef();
+
+        this.starred = false;
 
         this.createLiveConnection = this.createLiveConnection.bind(this);
     };
@@ -219,6 +222,28 @@ class ChannelShow extends React.Component {
         }
     }
 
+    //TODO: make is_starred column in channels, tie column to state
+    // ajax request for update on click
+    // setState to true/false ? maybe
+    
+    // similarly, ajax request for description update on click for "Add a topic"
+
+    // toggleStar(e) {
+    //     e.stopPropagation();
+
+    //     if (e.currentTarget.classList.contains('star-star')) {
+    //         e.currentTarget.classList.add('hidden');
+    //         const solidStar = document.getElementsByClassName('solid-star')[0];
+    //         solidStar.classList.add('active');
+    //         this.starred = true;
+    //     } else if (e.currentTarget.classList.contains('solid-star')) {
+    //         e.currentTarget.classList.remove('active');
+    //         const solidStar = document.getElementsByClassName('star-star')[0];
+    //         solidStar.classList.remove('hidden');
+    //         this.starred = false;
+    //     }
+    // }
+
     render() {
         let chatlog;
         let name;
@@ -309,6 +334,16 @@ class ChannelShow extends React.Component {
             </div>
         )
 
+    
+        const starred = (
+            <img 
+                className="star solid-star" 
+                src="https://image.flaticon.com/icons/svg/1828/1828961.svg" 
+                width="12"
+                height="12"
+                onClick={this.toggleStar.bind(this)}
+                />
+        )
 
 
 
@@ -325,12 +360,14 @@ class ChannelShow extends React.Component {
                             </p>
                             <div className="little-ch-icons">
                                 <img 
-                                    className="star" 
+                                    className="star star-star" 
                                     src={star}
                                     // src="https://image.flaticon.com/icons/svg/2107/2107992.svg" 
                                     width="12" 
                                     height="12"
+                                    onClick={this.toggleStar.bind(this)}
                                     />
+                                {starred}
                                 <span className="pipe">|</span>
                                 <div className="member-list" onClick={this.toggleMembersModal.bind(this)}>
                                     {membersModal}

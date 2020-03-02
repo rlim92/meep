@@ -58,8 +58,8 @@ class ChannelForm extends React.Component {
                         <img 
                             className="x-button" 
                             src="https://image.flaticon.com/icons/svg/2089/2089650.svg" 
-                            width="25" 
-                            height="25"
+                            // width="25" 
+                            // height="25"
                             onClick={this.toggleChannelCreateModal}
                         />
                     </div>
