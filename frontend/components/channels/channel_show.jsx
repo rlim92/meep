@@ -228,21 +228,21 @@ class ChannelShow extends React.Component {
     
     // similarly, ajax request for description update on click for "Add a topic"
 
-    // toggleStar(e) {
-    //     e.stopPropagation();
+    toggleStar(e) {
+        e.stopPropagation();
 
-    //     if (e.currentTarget.classList.contains('star-star')) {
-    //         e.currentTarget.classList.add('hidden');
-    //         const solidStar = document.getElementsByClassName('solid-star')[0];
-    //         solidStar.classList.add('active');
-    //         this.starred = true;
-    //     } else if (e.currentTarget.classList.contains('solid-star')) {
-    //         e.currentTarget.classList.remove('active');
-    //         const solidStar = document.getElementsByClassName('star-star')[0];
-    //         solidStar.classList.remove('hidden');
-    //         this.starred = false;
-    //     }
-    // }
+        // if (e.currentTarget.classList.contains('star-star')) {
+        //     e.currentTarget.classList.add('hidden');
+        //     const solidStar = document.getElementsByClassName('solid-star')[0];
+        //     solidStar.classList.add('active');
+        //     this.starred = true;
+        // } else if (e.currentTarget.classList.contains('solid-star')) {
+        //     e.currentTarget.classList.remove('active');
+        //     const solidStar = document.getElementsByClassName('star-star')[0];
+        //     solidStar.classList.remove('hidden');
+        //     this.starred = false;
+        // }
+    }
 
     render() {
         let chatlog;
