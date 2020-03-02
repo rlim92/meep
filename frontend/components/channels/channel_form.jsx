@@ -31,17 +31,28 @@ class ChannelForm extends React.Component {
         };
     };
 
-    exitForm(e) {
-        // debugger;
-        // console.log("")
-        // this.props.history.goBack();
-        this.props.history.push(`/home/`);
-    };
+    // exitForm(e) {
+    //     // debugger;
+    //     // console.log("")
+    //     // this.props.history.goBack();
+    //     this.props.history.push(`/home/`);
+    // };
+
+    toggleChannelCreateModal(e) {
+        e.stopPropagation();
+
+        const membersModalEl = document.getElementsByClassName('channel-create-modal-outer')[0];
+        if (!membersModalEl.classList.contains('active-modal')) {
+            membersModalEl.classList.add('active-modal');
+        } else {
+            membersModalEl.classList.remove('active-modal');
+        }
+    }
 
     render() {
         return (
-            <div className="channel-form-container">
-                <form className="channel-form" onSubmit={this.handleSubmit}>
+            <div className="channel-form-container channel-create-modal-outer" onClick={this.toggleChannelCreateModal}>
+                <form className="channel-form" onClick={(e) => e.stopPropagation()} onSubmit={this.handleSubmit}>
                     <div className="create-header">
                         <h2 className="create-title">Create a Channel</h2>
                         <img 
@@ -49,7 +60,7 @@ class ChannelForm extends React.Component {
                             src="https://image.flaticon.com/icons/svg/2089/2089650.svg" 
                             width="25" 
                             height="25"
-                            onClick={this.exitForm.bind(this)}
+                            onClick={this.toggleChannelCreateModal}
                         />
                     </div>
                     <div className="create-form-info">

@@ -1,4 +1,4 @@
-.members-modal-outer {
+.members-modal-outer, .channel-create-modal-outer {
     display: none;
   position: fixed;
   top: 0;
@@ -9,7 +9,6 @@
   z-index: 2;
   cursor: default;
   animation: fadeIn 0.3s;
-
 }
 
 @keyframes fadeIn {
@@ -29,6 +28,18 @@
   height: 520px;
   padding: 0px;
   margin:0px;
+}
+
+.channel-form {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  /* margin:0px;
+  padding:0px;
+  width: 520px;
+  height: 434px; */
 }
 
 .members-modal-header {
@@ -93,4 +104,8 @@
     /* margin-left: 1px; */
     margin-right: 0px;
     border-radius: 4px;
+}
+
+.create-button {
+    cursor: pointer;
 }
