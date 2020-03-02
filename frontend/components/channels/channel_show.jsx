@@ -138,10 +138,92 @@ class ChannelShow extends React.Component {
     //     return `${hours}:${paddedMinutes}${ampm}`;
     // };
 
+    profPic(user) {
+        if (user.username === "rich") {
+            return (
+                <img
+                    className="profile-icon"
+                    src={richIcon}
+                    width="36"
+                    height="36"
+                />
+            )
+        } else if (user.username === "DemoUser") {
+            return (
+                <img
+                    className="profile-icon"
+                    src={blackIcon}
+                    width="36"
+                    height="36"
+                />
+            )
+        } else {
+            switch (user.id % 5) {
+                case 0:
+                    return (
+                        <img
+                            className="profile-icon"
+                            src={blackIcon}
+                            width="36"
+                            height="36"
+                        />
+                    )
+                case 1:
+                    return (
+                        <img
+                            className="profile-icon"
+                            src={redIcon}
+                            width="36"
+                            height="36"
+                        />
+                    )
+                case 2:
+                    return (
+                        <img
+                            className="profile-icon"
+                            src={blueIcon}
+                            width="36"
+                            height="36"
+                        />
+                    )
+                case 3:
+                    return (
+                        <img
+                            className="profile-icon"
+                            src={yellowIcon}
+                            width="36"
+                            height="36"
+                        />
+                    )
+                case 4:
+                    return (
+                        <img
+                            className="profile-icon"
+                            src={greenIcon}
+                            width="36"
+                            height="36"
+                        />
+                    )
+            }
+        }
+    }
+
+    toggleMembersModal(e) {
+        e.stopPropagation();
+
+        const membersModalEl = document.getElementsByClassName('members-modal-outer')[0];
+        if (!membersModalEl.classList.contains('active-modal')) {
+            membersModalEl.classList.add('active-modal');
+        } else {
+            membersModalEl.classList.remove('active-modal');
+        }
+    }
+
     render() {
         let chatlog;
         let name;
         let memberCount = 0;
+        let members;
         let adminOptions;
         let publicAdd;
 
@@ -154,6 +236,20 @@ class ChannelShow extends React.Component {
 
             name = this.props.channel.name;
             memberCount = this.props.channel.member_ids.length
+
+            members = this.props.channel.member_ids.map( memId => {
+                if (this.props.users && this.props.users[memId]) {
+                    return (
+                        (<li
+                            className="pub-li user-to-add-li mem-item">
+                            {this.profPic(this.props.users[memId])}
+                            <h3 className="pub-channel-name user-ch-name mem-item-name">{this.props.users[memId].username}</h3>
+                        </li>)
+                    )
+                }
+            })
+
+
 
             if (!this.props.channel.is_private || this.props.channel.admin_id === this.props.currentUserId) {
                 publicAdd = (
@@ -193,6 +289,32 @@ class ChannelShow extends React.Component {
             })
         }
 
+
+        // testing modal
+        const membersModal = (
+            <div className="channel-form-container members-modal-outer" onClick={this.toggleMembersModal.bind(this)}>
+                <div className="channel-form members-modal" onClick={(e) => e.stopPropagation()}>
+                    <div className="members-modal-header">
+                        <h3 className="add-browse member-list-h3">{memberCount} Members in #{name}</h3>
+                        <img
+                            className="x-button modal-x-mems"
+                            src="https://image.flaticon.com/icons/svg/2089/2089650.svg"
+                            onClick={this.toggleMembersModal.bind(this)}
+                        />
+                    </div>
+                    <ul className="member-list-ul">
+                        {members}
+                    </ul>
+                </div>
+            </div>
+        )
+
+
+
+
+
+
+
         return (
             <div className="show-container">
                 <div className="chatlog channel">
@@ -210,7 +332,8 @@ class ChannelShow extends React.Component {
                                     height="12"
                                     />
                                 <span className="pipe">|</span>
-                                <div className="member-list">
+                                <div className="member-list" onClick={this.toggleMembersModal.bind(this)}>
+                                    {membersModal}
                                     <img 
                                         className="png member-icon" 
                                         // src={person}

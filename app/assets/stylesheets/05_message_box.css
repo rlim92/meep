@@ -9,23 +9,7 @@
     margin-top: 10px;
     margin-left: 21px;
 }
-/* 
-.modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
-}
 
-.modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 
 .outer-layer-dropdown {
     position: fixed;
@@ -409,3 +393,5 @@
     width:0px;
     height:0px;
 }
+
+

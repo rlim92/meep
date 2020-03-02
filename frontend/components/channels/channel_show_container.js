@@ -10,6 +10,7 @@ const mSTP = (state, ownProps) => {
     return {
         channel: state.entities.channels[ownProps.match.params.channelId],
         messages: state.entities.messages,
+        users: state.entities.users,
         currentUserId: state.session.id
     };
 };

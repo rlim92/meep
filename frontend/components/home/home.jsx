@@ -8,7 +8,7 @@ import UserAddCh from '../dms/user_add_channel_container';
 import Filler from './filler_container';
 import FillerDm from './filler_dm_container';
 import FillerCh from './filler_ch_container';
-// import ColorThemes from './color_themes';
+import ColorThemes from './color_themes';
 
 const Home = (props) => {
     return (
@@ -19,7 +19,7 @@ const Home = (props) => {
                 <Route path="/home/people/:userId/addTo" component={UserAddCh} />
                 <Route path="/home/channels/:channelId" component={ChannelShow} />
                 <Route path="/home/dms/:dmId" component={DmShow} />
-                {/* <Route path="/home/colors" component={ColorThemes} /> */}
+                <Route path="/home/colors" component={ColorThemes} />
                 <Route path="/home/dm" component={FillerDm} />
                 <Route path="/home/channel" component={FillerCh} />
                 <Route path="/home" component={Filler}/>

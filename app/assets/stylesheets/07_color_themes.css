@@ -421,7 +421,7 @@
 }
 
 #red-theme .star:hover,#blue-theme .star:hover,
-#green-theme .star:hover {
+#green-theme .star:hover, .lightning:hover {
     filter: none;
     filter: invert(96%) sepia(51%) saturate(2523%) hue-rotate(325deg) brightness(110%) contrast(103%);
 }
@@ -432,7 +432,8 @@
 }
 
 #red-theme .member-list:hover .member-icon,
-#yellow-theme .member-list:hover .member-icon,#green-theme .member-list:hover .member-icon {
+#yellow-theme .member-list:hover .member-icon,#green-theme .member-list:hover .member-icon
+, .water:hover {
     filter: none;
     /* filter: invert(54%) sepia(85%) saturate(1617%) hue-rotate(165deg) brightness(87%) contrast(87%); */
     filter: invert(66%) sepia(87%) saturate(1260%) hue-rotate(159deg) brightness(100%) contrast(89%);
@@ -445,7 +446,8 @@
 }
 
 #blue-theme .tack-hover:hover .tack, 
-#yellow-theme .tack-hover:hover .tack,#green-theme .tack-hover:hover .tack {
+#yellow-theme .tack-hover:hover .tack,#green-theme .tack-hover:hover .tack
+, .fire:hover {
     filter: none;
     /* filter: invert(16%) sepia(96%) saturate(1147%) hue-rotate(308deg) brightness(95%) contrast(100%); */
     filter: invert(30%) sepia(71%) saturate(6947%) hue-rotate(330deg) brightness(90%) contrast(93%);
@@ -456,7 +458,7 @@
 }
 
 #red-theme .add-description-div:hover .pen,#blue-theme .add-description-div:hover .pen,
-#yellow-theme .add-description-div:hover .pen {
+#yellow-theme .add-description-div:hover .pen, .wind:hover {
     filter: none;
     /* filter: invert(31%) sepia(74%) saturate(1199%) hue-rotate(133deg) brightness(89%) contrast(99%); */
     filter: invert(49%) sepia(100%) saturate(288%) hue-rotate(103deg) brightness(99%) contrast(96%);
@@ -511,6 +513,8 @@
 }
 
 
+
+
 /* #normal li, #normal div,
 #normal p, #normal h3,
 #normal span.hashtag
@@ -523,3 +527,42 @@
     color: #ffeb3b;
     color: #2eb67d;
 } */
+
+.fire {
+    color: #e01e5a;
+    filter: invert(30%) sepia(71%) saturate(6947%) hue-rotate(330deg) brightness(90%) contrast(93%);
+}
+
+.water {
+    color: #36c5f0;
+    filter: invert(66%) sepia(87%) saturate(1260%) hue-rotate(159deg) brightness(100%) contrast(89%); 
+}
+
+.lightning {
+    color: #ffeb3b;
+    filter: invert(96%) sepia(51%) saturate(2523%) hue-rotate(325deg) brightness(110%) contrast(103%);
+}
+
+.wind {
+    color: #2eb67d;
+    filter: invert(49%) sepia(100%) saturate(288%) hue-rotate(103deg) brightness(99%) contrast(96%);
+}
+
+.colors-div {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.colors-inner-div-1, .colors-inner-div-2 {
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.fire, .water, .lightning, .wind {
+    padding: 1px;
+}
