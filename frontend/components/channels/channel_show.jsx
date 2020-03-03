@@ -338,7 +338,9 @@ class ChannelShow extends React.Component {
 
             name = this.props.channel.name;
             memberCount = this.props.channel.member_ids.length;
-            addDesc = this.props.channel.description;
+            if (this.props.channel.description && this.props.channel.description !== "") {
+                addDesc = this.props.channel.description;
+            }
 
             members = this.props.channel.member_ids.map( memId => {
                 if (this.props.users && this.props.users[memId]) {
