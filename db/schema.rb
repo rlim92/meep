@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_195444) do
+ActiveRecord::Schema.define(version: 2020_03_03_011648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_195444) do
     t.integer "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_starred"
     t.index ["admin_id"], name: "index_channels_on_admin_id"
   end
 
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_195444) do
     t.boolean "is_team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_starred"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_195444) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_pinned"
     t.index ["author_id"], name: "index_messages_on_author_id"
     t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
     t.index ["parent_id"], name: "index_messages_on_parent_id", unique: true

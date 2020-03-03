@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import ChannelShow from './channel_show';
-import { fetchChannel, removeChMember, fetchUserChannels, destroyChannel } from '../../actions/channel_actions';
+import { fetchChannel, removeChMember, fetchUserChannels, destroyChannel, updateChStar } from '../../actions/channel_actions';
 import { receiveMessage, fetchChannelMessages }  from '../../actions/message_actions';
 import { fetchChannelMembers } from '../../actions/user_actions';
-// import { fetchCurrentUser } from '../../actions/session_actions';
 
 
 const mSTP = (state, ownProps) => {
@@ -23,7 +22,8 @@ const mDTP = (dispatch) => {
         fetchChannelMembers: (channelId) => dispatch(fetchChannelMembers(channelId)),
         removeChMember: (leaverId, chId) => dispatch(removeChMember(leaverId, chId)),
         fetchUserChannels: (userId) => dispatch(fetchUserChannels(userId)),
-        destroyChannel: (chId) => dispatch(destroyChannel(chId))
+        destroyChannel: (chId) => dispatch(destroyChannel(chId)),
+        updateChStar: (channel) => dispatch(updateChStar(channel))
     };
 };
 

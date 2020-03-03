@@ -1,4 +1,4 @@
-.members-modal-outer, .channel-create-modal-outer {
+.members-modal-outer, .channel-create-modal-outer, .pinned-modal-outer, .channel-desc-modal-outer {
     display: none;
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@
 }
 
 
-.members-modal {
+.members-modal, .pinned-modal {
     /* display: none; */
   position: absolute;
   top: 50%;
@@ -40,6 +40,89 @@
   padding:0px;
   width: 520px;
   height: 434px; */
+}
+
+.desc-form {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  margin: 0px;
+  padding:0px;
+  width: 520px;
+  height: 228px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.desc-header {
+    margin:0px;
+    padding:0px;
+    display: flex;
+    justify-content: space-between;
+    width:472px;
+    /* margin-bottom: 29px; */
+    /* padding-left: 30px; */
+    /* margin-right: 30px; */
+}
+.desc-title {
+    font-size: 22px;
+    margin-bottom: 17px;
+}
+
+.desc-input {
+    height: 34px;
+    width: 456px;
+    /* padding: 8px; */
+    padding-left: 8px;
+    padding-bottom: 46px;
+    padding-top: 2px;
+    padding-right: 2px;
+    border: 1px solid #818385;
+    border-radius: 4px;
+    margin: 0px;
+    margin-left: 24px;
+}
+
+.desc-bottom {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: stretch;
+    margin-top: 0px;
+}
+
+.button-desc-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    /* justify-content: right; */
+}
+
+.desc-button {
+    /* margin-top: 10px; */
+    margin-right: 25px;
+    height: 36px;
+    padding-bottom: 11px;
+    padding-top: 9px;
+}
+
+.desc-cancel {
+    /* margin-top: 10px; */
+    margin-right: 12px;
+    height: 36px;
+    background-color: #191c22;
+    color: rgb(209, 210, 211);
+    border: 1px solid rgba(209, 210, 211, 0.3);
+    padding-bottom: 12px;
+    padding-top: 8px;
+}
+
+.desc-cancel:hover {
+    box-shadow: 0 1px 3px 0 #222529;
+    background-color: rgba(34, 36, 41, 0.6);
 }
 
 .members-modal-header {
@@ -100,7 +183,7 @@
     /* padding-bottom: 30px; */
     width: 16px;
     height: 16px;
-    margin-top: 25px;
+    margin-top: 20px;
     /* margin-left: 1px; */
     margin-right: 0px;
     border-radius: 4px;
@@ -111,6 +194,10 @@
     width: 20px;
     border-radius: 4px;
 }
+/* 
+.desc-x-button {
+    margin-bottom: 27px;
+} */
 
 .create-button {
     cursor: pointer;

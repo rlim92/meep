@@ -100,6 +100,14 @@ export const updateChannel = (channel) => {
     };
 };
 
+export const updateChStar = (channel) => {
+    return (dispatch) => {
+        return APIUtil.updateChannel(channel).then(channel => {
+            dispatch(receiveChannel(channel));
+        });
+    };
+}
+
 export const destroyChannel = (channelId) => {
     return (dispatch) => {
         return APIUtil.destroyChannel(channelId).then(membership => {

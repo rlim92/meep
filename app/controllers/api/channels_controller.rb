@@ -79,11 +79,20 @@ class Api::ChannelsController < ApplicationController
                 render json: ["Channel not found!"], status: 420
             end
         else
+            # debugger;
             @channel = Channel.find(params[:id])
-            if @channel.update(channel_params)
-                render :show
-            else
-                render json: @channel.errors.full_messages, status: 420
+            if params[:channel][:is_starred]
+                if @channel.update(is_starred: params[:channel][:is_starred])
+                    render :show
+                else
+                    render json: @channel.errors.full_messages, status: 420
+                end
+            elsif params[:channel][:description]
+                if @channel.update(description: params[:channel][:description])
+                    render :show
+                else
+                    render json: @channel.errors.full_messages, status: 420
+                end
             end
         end
     end
@@ -102,7 +111,7 @@ class Api::ChannelsController < ApplicationController
     end
 
     private
-    def channel_params
-        params.require(:channel).permit(:name, :description, :is_private)
-    end
+    # def channel_params
+    #     params.require(:channel).permit(:name, :description, :is_private)
+    # end
 end

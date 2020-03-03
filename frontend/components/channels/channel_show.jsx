@@ -11,7 +11,11 @@ class ChannelShow extends React.Component {
 
         this.bottom = React.createRef();
 
-        this.starred = false;
+        if (this.props.channel) {
+            this.state = { is_starred: this.props.channel.is_starred }
+        } else {
+            this.state = { is_starred: false }
+        }
 
         this.createLiveConnection = this.createLiveConnection.bind(this);
     };
@@ -46,12 +50,46 @@ class ChannelShow extends React.Component {
         const { fetchChannelMembers, fetchChannelMessages } = this.props;
         const channelId = this.props.match.params.channelId;
 
+        const solidStar = document.getElementsByClassName('solid-star')[0];
+        const starStar = document.getElementsByClassName('star-star')[0];
+        // debugger;
+        if (this.props.channel && this.props.channel.is_starred) {
+            debugger
+            if (!solidStar.classList.contains('active') && !starStar.classList.contains('hidden')) {
+                debugger;
+                solidStar.classList.add('active');
+                starStar.classList.add('hidden');
+            }
+        } else if (this.props.channel && !this.props.channel.is_starred) {
+            if (solidStar.classList.contains('active') && starStar.classList.contains('hidden')) {
+                solidStar.classList.remove('active');
+                starStar.classList.remove('hidden');
+            }
+        }
+
         this.createLiveConnection();
 
         fetchChannelMembers(channelId).then(()=>fetchChannelMessages(channelId));
     };
 
     componentDidUpdate(prevProps) {
+
+        const solidStar = document.getElementsByClassName('solid-star')[0];
+        const starStar = document.getElementsByClassName('star-star')[0];
+        // debugger;
+        if (this.props.channel && this.props.channel.is_starred) {
+            // debugger
+            if (!solidStar.classList.contains('active') && !starStar.classList.contains('hidden')) {
+                // debugger;
+                solidStar.classList.add('active');
+                starStar.classList.add('hidden');
+            }
+        } else if (this.props.channel && !this.props.channel.is_starred) {
+            if (solidStar.classList.contains('active') && starStar.classList.contains('hidden')) {
+                solidStar.classList.remove('active');
+                starStar.classList.remove('hidden');
+            }
+        }
         if (this.bottom.current) {
             this.bottom.current.scrollIntoView();
         }
@@ -222,6 +260,33 @@ class ChannelShow extends React.Component {
         }
     }
 
+    togglePinnedModal(e) {
+        e.stopPropagation();
+
+        // debugger;
+        const membersModalEl = document.getElementsByClassName('pinned-modal-outer')[0];
+        if (!membersModalEl.classList.contains('active-modal')) {
+            membersModalEl.classList.add('active-modal');
+        } else {
+            membersModalEl.classList.remove('active-modal');
+        }
+    }
+
+    toggleDescModal(e) {
+        if (e) {
+            e.stopPropagation();
+        }
+
+        // debugger;
+        const membersModalEl = document.getElementsByClassName('channel-desc-modal-outer')[0];
+        if (!membersModalEl.classList.contains('active-modal')) {
+            membersModalEl.classList.add('active-modal');
+        } else {
+            membersModalEl.classList.remove('active-modal');
+        }
+    }
+
+
     //TODO: make is_starred column in channels, tie column to state
     // ajax request for update on click
     // setState to true/false ? maybe
@@ -229,19 +294,29 @@ class ChannelShow extends React.Component {
     // similarly, ajax request for description update on click for "Add a topic"
 
     toggleStar(e) {
-        e.stopPropagation();
+        // e.stopPropagation();
 
-        // if (e.currentTarget.classList.contains('star-star')) {
-        //     e.currentTarget.classList.add('hidden');
-        //     const solidStar = document.getElementsByClassName('solid-star')[0];
-        //     solidStar.classList.add('active');
-        //     this.starred = true;
-        // } else if (e.currentTarget.classList.contains('solid-star')) {
-        //     e.currentTarget.classList.remove('active');
-        //     const solidStar = document.getElementsByClassName('star-star')[0];
-        //     solidStar.classList.remove('hidden');
-        //     this.starred = false;
-        // }
+        if (e.target.classList.contains('star-star')) {
+            const channel = { id: this.props.channel.id, is_starred: true }
+            this.props.updateChStar(channel)
+        } else if (e.target.classList.contains('solid-star')) {
+            const channel = { id: this.props.channel.id, is_starred: false }
+            this.props.updateChStar(channel)
+        }
+    }
+
+    editDesc(e) {
+        // e.preventDefault();
+        if (e.target.classList.contains('desc-input') && e.keyCode === 13) {
+            const channel = { id: this.props.channel.id, description: e.target.value }
+            this.props.updateChStar(channel).then(()=>this.toggleDescModal());
+            e.target.value = "";
+        } else if (!e.target.classList.contains('desc-input') ) {
+            const desc = document.getElementsByClassName('desc-input')[0].value;
+            const channel = { id: this.props.channel.id, description: desc }
+            this.props.updateChStar(channel).then(()=>this.toggleDescModal());
+            document.getElementsByClassName('desc-input')[0].value = "";
+        }
     }
 
     render() {
@@ -251,6 +326,8 @@ class ChannelShow extends React.Component {
         let members;
         let adminOptions;
         let publicAdd;
+        let pinnedMessages = [];
+        let addDesc = "Add a description";
 
         const currentCh = document.getElementById(this.props.match.params.channelId);
         if (currentCh && !currentCh.classList.contains('current')) {
@@ -260,16 +337,18 @@ class ChannelShow extends React.Component {
         if (this.props.channel && this.props.channel.id == this.props.match.params.channelId) {
 
             name = this.props.channel.name;
-            memberCount = this.props.channel.member_ids.length
+            memberCount = this.props.channel.member_ids.length;
+            addDesc = this.props.channel.description;
 
             members = this.props.channel.member_ids.map( memId => {
                 if (this.props.users && this.props.users[memId]) {
                     return (
-                        (<li
+                        <li
+                            key={`member-count-item-${memId}`}
                             className="pub-li user-to-add-li mem-item">
                             {this.profPic(this.props.users[memId])}
                             <h3 className="pub-channel-name user-ch-name mem-item-name">{this.props.users[memId].username}</h3>
-                        </li>)
+                        </li>
                     )
                 }
             })
@@ -305,6 +384,17 @@ class ChannelShow extends React.Component {
                 if (idx > 0) {
                     prev = Object.values(this.props.messages)[idx - 1];
                 }
+
+                if (msg.is_pinned) {
+                    pinnedMessages.push(
+                        <MessageItem
+                            key={`msg-${msg.id}`}
+                            message={msg}
+                            // prev={prev}
+                        />
+                    )
+                }
+
                 // debugger;
                 return (<MessageItem 
                     key={`msg-${msg.id}`}
@@ -334,7 +424,54 @@ class ChannelShow extends React.Component {
             </div>
         )
 
-    
+        const pinnedModal = (
+            <div className="channel-form-container pinned-modal-outer" onClick={this.togglePinnedModal.bind(this)}>
+                <div className="channel-form pinned-modal" onClick={(e) => e.stopPropagation()}>
+                    <div className="members-modal-header">
+                        <h3 className="add-browse member-list-h3">{pinnedMessages.length} Pinned messages in #{name}</h3>
+                        <img
+                            className="x-button modal-x-mems"
+                            src="https://image.flaticon.com/icons/svg/2089/2089650.svg"
+                            onClick={this.togglePinnedModal.bind(this)}
+                        />
+                    </div>
+                    <ul className="member-list-ul">
+                        {pinnedMessages}
+                    </ul>
+                </div>
+            </div>
+        )
+
+        const descriptionModal = (
+            <div className="channel-form-container channel-desc-modal-outer" onClick={this.toggleDescModal}>
+                <div className="channel-form desc-form" onClick={(e) => e.stopPropagation()} >
+                    <div className="create-header desc-header">
+                        <h2 className="create-title desc-title">Edit channel description</h2>
+                        <img
+                            className="x-button desc-x-button"
+                            src="https://image.flaticon.com/icons/svg/2089/2089650.svg"
+                            // width="25" 
+                            // height="25"
+                            onClick={this.toggleDescModal.bind(this)}
+                        />
+                    </div>
+                    <div className="create-bottom desc-bottom">
+                        <input
+                            className="create-input description desc-input"
+                            type="text"
+                            onKeyDown={this.editDesc.bind(this)}
+                            // value={this.state.description}
+                            // onChange={this.update('description')}
+                        />
+                        <div className="button-desc-div">
+                            <button className="form-button desc-cancel" onClick={this.toggleDescModal.bind(this)}>Cancel</button>
+                            <button className="form-button desc-button" onClick={this.editDesc.bind(this)}>Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+
         const starred = (
             <img 
                 className="star solid-star" 
@@ -382,7 +519,8 @@ class ChannelShow extends React.Component {
                                     <p className="member-count">{memberCount}</p>
                                 </div>
                                 <span className="pipe pipe-two">|</span>
-                                <div className="member-list tack-hover">
+                                <div className="member-list tack-hover" onClick={this.togglePinnedModal.bind(this)}>
+                                    {pinnedModal}
                                     <img
                                         className="star tack"
                                         src={tack}
@@ -392,14 +530,15 @@ class ChannelShow extends React.Component {
                                     <p className="tack-count">0</p>
                                 </div>
                                 <span className="pipe pipe-three">|</span>
-                                <div className="add-description-div">
+                                <div className="add-description-div" onClick={this.toggleDescModal.bind(this)}>
+                                    {descriptionModal}
                                     <img
                                         className="star pen"
                                         src={pen}
                                         width="12"
                                         height="12"
                                     />
-                                    <p className="member-count add-desc">Add a description</p>
+                                    <p className="member-count add-desc">{addDesc}</p>
                                 </div>
                             </div>
                         </div>
